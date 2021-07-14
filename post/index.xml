@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Post on TECHaas.com</title>
-    <link>http://example.org/post/</link>
-    <description>Recent content in Post on TECHaas.com</description>
+    <title>Post on Techaas.com</title>
+    <link>http://techaas.github.io/post/</link>
+    <description>Recent content in Post on Techaas.com</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Tue, 13 Jul 2021 15:41:01 +0900</lastBuildDate><atom:link href="http://example.org/post/index.xml" rel="self" type="application/rss+xml" />
+    <language>ja</language>
+    <lastBuildDate>Mon, 01 Mar 2021 00:00:00 +0900</lastBuildDate><atom:link href="http://techaas.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>My Fist Post</title>
-      <link>http://example.org/post/my-fist-post/</link>
-      <pubDate>Tue, 13 Jul 2021 15:41:01 +0900</pubDate>
+      <title>Video Player</title>
+      <link>http://techaas.github.io/post/video-player/</link>
+      <pubDate>Mon, 01 Mar 2021 00:00:00 +0900</pubDate>
       
-      <guid>http://example.org/post/my-fist-post/</guid>
-      <description>Test.</description>
+      <guid>http://techaas.github.io/post/video-player/</guid>
+      <description>&lt;p&gt;Android / iOS の両方でビデオ再生するサンプルです.&lt;br&gt;
+一番簡単に AV 再生コードを書くとこんな感じになる例です.&lt;/p&gt;</description>
     </item>
     
   </channel>
