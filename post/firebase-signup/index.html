@@ -10,7 +10,8 @@
 
 
 
-    <meta name="description" content="Techaas.net">
+    <meta name="description" content="「Firebase のユーザー認証システムで、WEBクライアント認証を実装してみる」 の続きです.
+今回はユーザ登録と、認証画面を追加します.">
 
 
 
@@ -22,7 +23,7 @@
     
 
 
-    <title>Post | Techaas.net</title>
+    <title>Firebase Auth (その2) | Techaas.net</title>
 
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
@@ -30,15 +31,19 @@
 
     
 
-    <meta property="og:title" content="Post" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="http://www.techaas.net/post/" />
+    <meta property="og:title" content="Firebase Auth (その2)" />
+<meta property="og:description" content="「Firebase のユーザー認証システムで、WEBクライアント認証を実装してみる」 の続きです.
+今回はユーザ登録と、認証画面を追加します." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://www.techaas.net/post/firebase-signup/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-07-15T00:00:01+09:00" />
+<meta property="article:modified_time" content="2021-07-15T00:00:01+09:00" />
 
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Post"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:title" content="Firebase Auth (その2)"/>
+<meta name="twitter:description" content="「Firebase のユーザー認証システムで、WEBクライアント認証を実装してみる」 の続きです.
+今回はユーザ登録と、認証画面を追加します."/>
 
 
     <link rel="preload" as="font" href="/fonts/Metropolis.woff2" type="font/woff2" crossorigin="anonymous">
@@ -63,6 +68,49 @@
 <!-- Made with Geekblog theme https://github.com/thegeeklab/hugo-geekblog -->
 
     
+
+
+
+
+<script type="application/ld+json">
+{
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "articleSection": "post",
+    "name": "Firebase Auth (その2)",
+    "headline": "Firebase Auth (その2)",
+    "alternativeHeadline": "",
+    "description": "\u003cp\u003e「Firebase のユーザー認証システムで、WEBクライアント認証を実装してみる」 の続きです.\u003cbr\u003e\n今回はユーザ登録と、認証画面を追加します.\u003c\/p\u003e",
+    "inLanguage": "en",
+    "isFamilyFriendly": "true",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http:\/\/www.techaas.net\/post\/firebase-signup\/"
+    },
+    "author" : [
+    ],
+    "copyrightHolder" : "Techaas.net",
+    "copyrightYear" : "2021",
+    "dateCreated": "2021-07-15T00:00:01.00Z",
+    "datePublished": "2021-07-15T00:00:01.00Z",
+    "dateModified": "2021-07-15T00:00:01.00Z",
+    "publisher":{
+        "@type":"Organization",
+        "name": "Techaas.net",
+        "url": "http://www.techaas.net/",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http:\/\/www.techaas.net\/brand.svg",
+            "width":"32",
+            "height":"32"
+        }
+    },
+    "url" : "http:\/\/www.techaas.net\/post\/firebase-signup\/",
+    "wordCount" : "528",
+    "genre" : [ "Web" ]
+}
+</script>
+
 
      
  
@@ -161,197 +209,312 @@ if (!doNotTrack) {
 
         <main class="gblog-page container">
             
-    
-    
-
-    
-    
     <article class="gblog-post">
         <header class="gblog-post__header">
-            <h1><a href="/post/firebase-signup/">Firebase Auth (その2)</a></h1>
+            
+            
+
+            <h1>Firebase Auth (その2)</h1>
+            
+            <div class="gblog-post__meta">
+                <span class="no-wrap">
+                    <svg class="icon gblog_date"><use xlink:href="#gblog_date"></use></svg>
+                    <span class="gblog-post__tag">
+                        <time datetime="2021-07-15T00:00:01&#43;09:00">
+                            
+                            Jul 15, 2021
+                        </time>
+                    </span>
+                </span>
+
+                <span class="no-wrap">
+                    <svg class="icon gblog_timer"><use xlink:href="#gblog_timer"></use></svg>
+                    <span class="gblog-post__tag">3 min read</span>
+                </span>
+            </div>
+            
         </header>
 
         <section class="gblog-markdown">
             <p>「Firebase のユーザー認証システムで、WEBクライアント認証を実装してみる」 の続きです.<br>
 今回はユーザ登録と、認証画面を追加します.</p>
+  <div class="gblog-toc gblog-toc__level--6"><nav id="TableOfContents"><ul>
+        <li><a href="#vue-router-で-spa-の画面遷移">Vue router で SPA の画面遷移</a></li>
+        <li><a href="#ユーザー登録画面の実装">ユーザー登録画面の実装</a></li>
+        <li><a href="#ログイン画面の実装">ログイン画面の実装</a></li>
+        <li><a href="#ログイン状態による処理の切り替え">ログイン状態による処理の切り替え</a></li>
+        <li><a href="#ログアウト処理の追加">ログアウト処理の追加</a></li>
+      </ul></nav><hr></div>
+
+
+<div class="gblog-post__anchorwrap">
+    <h2 id="vue-router-で-spa-の画面遷移">
+        Vue router で SPA の画面遷移
+        <a data-clipboard-text="http://www.techaas.net/post/firebase-signup/#vue-router-で-spa-の画面遷移" class="gblog-post__anchor gblog-post__anchor--right clip" aria-label="Anchor Vue router で SPA の画面遷移" href="#vue-router-%e3%81%a7-spa-%e3%81%ae%e7%94%bb%e9%9d%a2%e9%81%b7%e7%a7%bb">
+            <svg class="icon gblog_link"><use xlink:href="#gblog_link"></use></svg>
+        </a>
+    </h2>
+</div><p>ユーザ登録とログイン画面を別に作りますので、 Vue router を使って SPA (Single Page App) にします。</p>
+<p>Vue router をプロジェクトに追加します。</p>
+<pre><code>$ npm install vue-router --save
+</code></pre><p><code>src/component/(Home|SignUp|SingIn).vue</code> に空のページを用意しておきます。</p>
+<pre><code>&lt;template&gt;
+  &lt;div class=&quot;home&quot;&gt;
+    &lt;h1&gt;This is Home page&lt;/h1&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+</code></pre><p><code>src/router/index.js</code> にルートを設定します。</p>
+<pre><code>import Vue from 'vue'
+import VueRouter from 'vue-router'
+import Home from '@/components/Home'
+import SignUp from '@/components/SignUp'
+import SignIn from '@/components/SignIn'
+
+Vue.use(VueRouter)
+
+const routes = [
+  {
+    path: '/',
+    name: 'Home',
+    component: Home,
+  },
+  {
+    path: '/signup',
+    name: 'SignUp',
+    component: SignUp
+  },
+  {
+    path: '/signin',
+    name: 'SignIn',
+    component: SignIn
+  },
+]
+
+const router = new VueRouter({
+  mode: 'history',
+  base: process.env.BASE_URL,
+  routes
+});
+
+export default router
+
+</code></pre><p><code>src/main.js</code> に router を使うように設定します。</p>
+<pre><code>import router from './router'
+
+new Vue({
+  router,
+  render: h =&gt; h(App),
+}).$mount('#app')
+</code></pre><p><code>App.vue</code> は、 router の現ページを表示するように設定しておきます。</p>
+<pre><code>&lt;template&gt;
+  &lt;div id=&quot;app&quot;&gt;
+    &lt;router-view/&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+</code></pre><p>ここまでの設定をすれば、 SPA として動作しますので、 <code>http://localhost:8080/signin/</code> などに
+アクセスして、それぞれのページが表示されているか確認します。</p>
+<p>ここまでの変更は、 <a class="gblog-markdown__link" href="https://github.com/techaas/vue-firebase-auth/tree/feature/spa">feature/spa</a> ブランチで確認できます。
+<br /><br /></p>
+<div class="gblog-post__anchorwrap">
+    <h2 id="ユーザー登録画面の実装">
+        ユーザー登録画面の実装
+        <a data-clipboard-text="http://www.techaas.net/post/firebase-signup/#ユーザー登録画面の実装" class="gblog-post__anchor gblog-post__anchor--right clip" aria-label="Anchor ユーザー登録画面の実装" href="#%e3%83%a6%e3%83%bc%e3%82%b6%e3%83%bc%e7%99%bb%e9%8c%b2%e7%94%bb%e9%9d%a2%e3%81%ae%e5%ae%9f%e8%a3%85">
+            <svg class="icon gblog_link"><use xlink:href="#gblog_link"></use></svg>
+        </a>
+    </h2>
+</div><p>では、実際にアカウントを登録する画面を作成します。 <code>SignUp.vue</code> を変更します。</p>
+<pre><code>&lt;template&gt;
+  &lt;div class=&quot;signup&quot;&gt;
+    &lt;form&gt;
+      &lt;div class=&quot;input-row&quot;&gt;
+        &lt;label&gt;メールアドレス：&lt;/label&gt;
+        &lt;input id=&quot;email&quot; type=&quot;email&quot; v-model=&quot;mailaddress&quot; /&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;input-row&quot;&gt;
+        &lt;label&gt;パスワード：&lt;/label&gt;
+        &lt;input id=&quot;password&quot; type=&quot;password&quot; v-model=&quot;password&quot; /&gt;
+      &lt;/div&gt;
+    &lt;/form&gt;
+    &lt;button class=&quot;btn&quot; @click=&quot;onClear&quot;&gt;クリア&lt;/button&gt;
+    &lt;button class=&quot;btn&quot; @click=&quot;signUp&quot;&gt;登録&lt;/button&gt;
+    &lt;div class=&quot;message&quot;&gt;{{ message }}&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+import firebase from 'firebase/app';
+import 'firebase/auth';
+import { firebaseErrors } from '../fbMessage';
+
+export default {
+  name: &quot;SignUp&quot;,
+  data() {
+    return {
+      mailaddress: '',
+      password: '',
+      message: '',
+    };
+  },
+  methods: {
+    onClear: function() {
+      this.mailaddress = '';
+      this.password = '';
+    },
+    signUp: function () {
+      this.message = '';
+      let auth = firebase.auth();
+      auth.useDeviceLanguage();
+      auth.createUserWithEmailAndPassword(this.mailaddress, this.password)
+        .then(() =&gt; {
+          // 成功時の処理
+          console.log(&quot;signup success&quot;);
+          if (!alert('メールアドレス「' + this.mailaddress + '」を登録しました.')) {
+            this.$router.push('/');
+          }
+        })
+        .catch((err) =&gt; {
+          // エラー時の処理
+          console.log(err);
+          this.message = firebaseErrors[err.code] || err.message;
+        });
+    },
+  },
+};
+&lt;/script&gt;
+</code></pre><p>入力されたアカウント情報を <code>firebase.auth().createUserWithEmailAndPassword()</code> に渡します。
+あとは、firebase 側で処理されて、成功したら <code>then()</code> になります。</p>
+<p><code>catch</code> の処理ですが、firebase のエラーコードをみて、適当な日本語メッセージを出します。
+出力されるエラーコードは、<a class="gblog-markdown__link" href="%60https://firebase.google.com/docs/auth/admin/errors%60">Admin Authentication API エラー</a> に一覧があるので、適宜翻訳を追加していきます。 該当するエラーコードがない場合には、オリジナルの英語のメッセージが表示されます。
+<br /><br /></p>
+<div class="gblog-post__anchorwrap">
+    <h2 id="ログイン画面の実装">
+        ログイン画面の実装
+        <a data-clipboard-text="http://www.techaas.net/post/firebase-signup/#ログイン画面の実装" class="gblog-post__anchor gblog-post__anchor--right clip" aria-label="Anchor ログイン画面の実装" href="#%e3%83%ad%e3%82%b0%e3%82%a4%e3%83%b3%e7%94%bb%e9%9d%a2%e3%81%ae%e5%ae%9f%e8%a3%85">
+            <svg class="icon gblog_link"><use xlink:href="#gblog_link"></use></svg>
+        </a>
+    </h2>
+</div><p>登録と同様に、 <code>SignIn.vue</code> を変更してログイン用の画面を作ります。</p>
+<pre><code>&lt;template&gt;
+  &lt;div class=&quot;signin&quot;&gt;
+    &lt;form&gt;
+      &lt;div class=&quot;input-row&quot;&gt;
+        &lt;label&gt;メールアドレス：&lt;/label&gt;
+        &lt;input id=&quot;email&quot; type=&quot;email&quot; v-model=&quot;mailaddress&quot; /&gt;
+      &lt;/div&gt;
+      &lt;div class=&quot;input-row&quot;&gt;
+        &lt;label&gt;パスワード：&lt;/label&gt;
+        &lt;input id=&quot;password&quot; type=&quot;password&quot; v-model=&quot;password&quot; /&gt;
+      &lt;/div&gt;
+    &lt;/form&gt;
+    &lt;button class=&quot;btn&quot; @click=&quot;onClear&quot;&gt;クリア&lt;/button&gt;
+    &lt;button class=&quot;btn&quot; @click=&quot;onSignIn&quot;&gt;ログイン&lt;/button&gt;
+    &lt;div class=&quot;message&quot;&gt;{{ message }}&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+import firebase from &quot;firebase/app&quot;;
+import 'firebase/auth';
+import { firebaseErrors } from '../fbMessage';
+
+export default {
+  name: &quot;SignIn&quot;,
+  data() {
+    return {
+      mailaddress: '',
+      password: '',
+      message: '',
+    };
+  },
+  methods: {
+    onClear: function() {
+      this.mailaddress = '';
+      this.password = '';
+    },
+    onSignIn: function () {
+      this.message = '';
+      let auth = firebase.auth();
+      auth.useDeviceLanguage();
+      auth.signInWithEmailAndPassword(this.mailaddress, this.password)
+        .then(() =&gt; {
+          // 成功時の処理
+          console.log(&quot;signin success&quot;);
+          if (!alert('ログインしました')) {
+            this.$router.push('/');
+          }
+        })
+        .catch((err) =&gt; {
+          // エラー時の処理
+          console.log(err);
+          this.message = firebaseErrors[err.code] || err.message;
+        });
+    },
+  },
+};
+&lt;/script&gt;
+</code></pre><p>構造は、SignUpとほぼ同じです。入力されたアカウント情報を <code>firebase.auth().signInWithEmailAndPassword()</code> に渡します。
+あとは、firebase 側で処理されて、ログインできたら <code>then()</code> の <code>$router.push('/')</code> になり、成功したら、<code>Home.vue</code> に戻ります。
+<br /><br /></p>
+<div class="gblog-post__anchorwrap">
+    <h2 id="ログイン状態による処理の切り替え">
+        ログイン状態による処理の切り替え
+        <a data-clipboard-text="http://www.techaas.net/post/firebase-signup/#ログイン状態による処理の切り替え" class="gblog-post__anchor gblog-post__anchor--right clip" aria-label="Anchor ログイン状態による処理の切り替え" href="#%e3%83%ad%e3%82%b0%e3%82%a4%e3%83%b3%e7%8a%b6%e6%85%8b%e3%81%ab%e3%82%88%e3%82%8b%e5%87%a6%e7%90%86%e3%81%ae%e5%88%87%e3%82%8a%e6%9b%bf%e3%81%88">
+            <svg class="icon gblog_link"><use xlink:href="#gblog_link"></use></svg>
+        </a>
+    </h2>
+</div><p><code>Home.vue</code> を変更して、ユーザのログイン状態を検知して変化するようにしてみます。
+そのために、 <code>onAuthStateChanged</code> にオブザーバを登録します。</p>
+<p>ログイン状態が変化するたびに、オブザーバが呼ばれます。
+パラメータの <code>user</code> は、 <a class="gblog-markdown__link" href="https://firebase.google.com/docs/reference/js/firebase.User">Userのプロパティ</a> に詳しい説明があります。</p>
+<pre><code>  mounted: function () {
+    firebase.auth().onAuthStateChanged((user) =&gt; {
+      if (user) {
+        // ログインしていれば中通る
+        this.user = user;
+        console.log(&quot;user&quot;, user); // ユーザー情報が表示される
+        user.getIdToken(true).then((token) =&gt; (this.token = token));
+      } else {
+        this.token = null;
+      }
+    });
+  },
+
+</code></pre><p>また、 <code>user.getIdToken()</code> は、サーバ側で認証されたユーザーからのアクセスかチェックするためのトークンを取得します。
+そちらについては、後ほど詳しく見ていきます。
+<br /><br /></p>
+<div class="gblog-post__anchorwrap">
+    <h2 id="ログアウト処理の追加">
+        ログアウト処理の追加
+        <a data-clipboard-text="http://www.techaas.net/post/firebase-signup/#ログアウト処理の追加" class="gblog-post__anchor gblog-post__anchor--right clip" aria-label="Anchor ログアウト処理の追加" href="#%e3%83%ad%e3%82%b0%e3%82%a2%e3%82%a6%e3%83%88%e5%87%a6%e7%90%86%e3%81%ae%e8%bf%bd%e5%8a%a0">
+            <svg class="icon gblog_link"><use xlink:href="#gblog_link"></use></svg>
+        </a>
+    </h2>
+</div><p><code>App.vue</code> でも同じように、 <code>onAuthStateChanged</code> にオブザーバを登録して、ログインしているならログアウトのリンクを表示するようにして、ログアウト処理をしてみます。</p>
+<pre><code>  methods: {
+    onLogout: function() {
+      firebase.auth().signOut()
+        .then(() =&gt; {
+          // 成功時の処理
+          console.log(&quot;logout success&quot;);
+          if (!alert('ログアウトしました')) {
+            this.$router.go();
+            // this.$router.push('/');
+          }
+        })
+        .catch((err) =&gt; {
+          // エラー時の処理
+          console.log(err);
+          this.message = firebaseErrors[err.code] || err.message;
+        });
+    }
+  }
+</code></pre><p><code>firebase.auth().signOut()</code> を呼び出すだけです。</p>
+<p><code>firebase.auth()</code> の <code>signInWithEmailAndPassword()</code> でログイン、　<code>signOut()</code> でログアウト、 <code>onAuthStateChanged</code> にオブザーバーを登録してログイン状態を把握するというのが基本的な流れとなります。</p>
+<p>この時点での変更は、 <a class="gblog-markdown__link" href="">feature/signin</a> ブランチで確認できます。<br>
+このあと、サーバ側で認証状態の確認をしてみます。</p>
+
         </section>
-        <div class="gblog-post__readmore">
-            
-            <a class="flex-inline align-center fake-link" title="Read full post" href="/post/firebase-signup/">Read full post</a>
-            
-        </div>
-
-        <footer class="gblog-post__footer">
-            <span class="no-wrap">
-                <svg class="icon gblog_date"><use xlink:href="#gblog_date"></use></svg>
-                <span class="gblog-post__tag">
-                    <time datetime="2021-07-15T00:00:01&#43;09:00">
-                        
-                        Jul 15, 2021
-                    </time>
-                </span>
-            </span>
-
-            <span class="no-wrap">
-                <svg class="icon gblog_timer"><use xlink:href="#gblog_timer"></use></svg>
-                <span class="gblog-post__tag">3 min read</span>
-            </span>
-
-            
-
-            
-            
-
-            
-            
-            
-                
-                
-                    
-                    <span class="no-wrap">
-                    <svg class="icon gblog_bookmarks"><use xlink:href="#gblog_bookmarks"></use></svg>
-                    
-<span class="gblog-post__tag gblog-button">
-    <a class="gblog-button__link" href="/tags/Web/" title="All posts tagged with 'Web'">Web</a>
-</span>
-
-                    </span>
-                    
-                
-                
-            
-            
-        </footer>
     </article>
-    
-    <article class="gblog-post">
-        <header class="gblog-post__header">
-            <h1><a href="/post/firebase-auth/">Firebase Auth (その1)</a></h1>
-        </header>
-
-        <section class="gblog-markdown">
-            <p><a class="gblog-markdown__link" href="https://firebase.google.com/">Firebase</a> のユーザー認証システムで、WEBクライアント認証を実装してみる.<br>
-最初は <a class="gblog-markdown__link" href="https://jp.vuejs.org/index.html">Vue.js</a> での Firebase への接続から.</p>
-        </section>
-        <div class="gblog-post__readmore">
-            
-            <a class="flex-inline align-center fake-link" title="Read full post" href="/post/firebase-auth/">Read full post</a>
-            
-        </div>
-
-        <footer class="gblog-post__footer">
-            <span class="no-wrap">
-                <svg class="icon gblog_date"><use xlink:href="#gblog_date"></use></svg>
-                <span class="gblog-post__tag">
-                    <time datetime="2021-07-14T00:00:01&#43;09:00">
-                        
-                        Jul 14, 2021
-                    </time>
-                </span>
-            </span>
-
-            <span class="no-wrap">
-                <svg class="icon gblog_timer"><use xlink:href="#gblog_timer"></use></svg>
-                <span class="gblog-post__tag">1 min read</span>
-            </span>
-
-            
-
-            
-            
-
-            
-            
-            
-                
-                
-                    
-                    <span class="no-wrap">
-                    <svg class="icon gblog_bookmarks"><use xlink:href="#gblog_bookmarks"></use></svg>
-                    
-<span class="gblog-post__tag gblog-button">
-    <a class="gblog-button__link" href="/tags/Web/" title="All posts tagged with 'Web'">Web</a>
-</span>
-
-                    </span>
-                    
-                
-                
-            
-            
-        </footer>
-    </article>
-    
-    <article class="gblog-post">
-        <header class="gblog-post__header">
-            <h1><a href="/post/video-player/">Video Player</a></h1>
-        </header>
-
-        <section class="gblog-markdown">
-            <p>Android / iOS の両方でビデオ再生するサンプルです.<br>
-一番簡単に AV 再生コードを書くとこんな感じになる例です.</p>
-        </section>
-        <div class="gblog-post__readmore">
-            
-            <a class="flex-inline align-center fake-link" title="Read full post" href="/post/video-player/">Read full post</a>
-            
-        </div>
-
-        <footer class="gblog-post__footer">
-            <span class="no-wrap">
-                <svg class="icon gblog_date"><use xlink:href="#gblog_date"></use></svg>
-                <span class="gblog-post__tag">
-                    <time datetime="2021-03-01T00:00:00&#43;09:00">
-                        
-                        Mar 1, 2021
-                    </time>
-                </span>
-            </span>
-
-            <span class="no-wrap">
-                <svg class="icon gblog_timer"><use xlink:href="#gblog_timer"></use></svg>
-                <span class="gblog-post__tag">1 min read</span>
-            </span>
-
-            
-
-            
-            
-
-            
-            
-            
-                
-                
-                    
-                    <span class="no-wrap">
-                    <svg class="icon gblog_bookmarks"><use xlink:href="#gblog_bookmarks"></use></svg>
-                    
-<span class="gblog-post__tag gblog-button">
-    <a class="gblog-button__link" href="/tags/Mobile/" title="All posts tagged with 'Mobile'">Mobile</a>
-</span>
-
-                    </span>
-                    
-                
-                
-            
-            
-        </footer>
-    </article>
-    
-    
-
-<nav class="gblog-paging flex flex-even align-center" role="navigation">
-    <div class="gblog-paging__item gblog-paging__item--prev">
-    
-    </div>
-    <div class="gblog-paging__state">Page 1 of 1</div>
-    <div class="gblog-paging__item gblog-paging__item--next">
-    
-    </div>
-</nav>
-
 
         </main>
 
