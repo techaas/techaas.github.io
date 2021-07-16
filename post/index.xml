@@ -13,8 +13,8 @@
       <pubDate>Thu, 15 Jul 2021 00:00:01 +0900</pubDate>
       
       <guid>http://www.techaas.net/post/firebase-signup/</guid>
-      <description>&lt;p&gt;「Firebase のユーザー認証システムで、WEBクライアント認証を実装してみる」 の続きです.&lt;br&gt;
-今回はユーザ登録と、認証画面を追加します.&lt;/p&gt;</description>
+      <description>&lt;p&gt;「Firebase のユーザー認証システムで、WEBクライアント認証を実装してみます」 の続きです.&lt;br&gt;
+今回はユーザ登録と、認証画面を追加して、ログイン・ログアウトを試してみます.&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -23,8 +23,8 @@
       <pubDate>Wed, 14 Jul 2021 00:00:01 +0900</pubDate>
       
       <guid>http://www.techaas.net/post/firebase-auth/</guid>
-      <description>&lt;p&gt;&lt;a class=&#34;gblog-markdown__link&#34; href=&#34;https://firebase.google.com/&#34;&gt;Firebase&lt;/a&gt; のユーザー認証システムで、WEBクライアント認証を実装してみる.&lt;br&gt;
-最初は &lt;a class=&#34;gblog-markdown__link&#34; href=&#34;https://jp.vuejs.org/index.html&#34;&gt;Vue.js&lt;/a&gt; での Firebase への接続から.&lt;/p&gt;</description>
+      <description>&lt;p&gt;&lt;a class=&#34;gblog-markdown__link&#34; href=&#34;https://firebase.google.com/&#34;&gt;Firebase&lt;/a&gt; のユーザー認証システムで、WEBクライアント認証を実装してみます.&lt;br&gt;
+最初は &lt;a class=&#34;gblog-markdown__link&#34; href=&#34;https://jp.vuejs.org/index.html&#34;&gt;Vue.js&lt;/a&gt; での Firebase への接続からです.&lt;/p&gt;</description>
     </item>
     
     <item>

@@ -186,8 +186,8 @@ if (!doNotTrack) {
         </header>
 
         <section class="gblog-markdown">
-            <p>「Firebase のユーザー認証システムで、WEBクライアント認証を実装してみる」 の続きです.<br>
-今回はユーザ登録と、認証画面を追加します.</p>
+            <p>「Firebase のユーザー認証システムで、WEBクライアント認証を実装してみます」 の続きです.<br>
+今回はユーザ登録と、認証画面を追加して、ログイン・ログアウトを試してみます.</p>
         </section>
         <div class="gblog-post__readmore">
             
@@ -244,8 +244,8 @@ if (!doNotTrack) {
         </header>
 
         <section class="gblog-markdown">
-            <p><a class="gblog-markdown__link" href="https://firebase.google.com/">Firebase</a> のユーザー認証システムで、WEBクライアント認証を実装してみる.<br>
-最初は <a class="gblog-markdown__link" href="https://jp.vuejs.org/index.html">Vue.js</a> での Firebase への接続から.</p>
+            <p><a class="gblog-markdown__link" href="https://firebase.google.com/">Firebase</a> のユーザー認証システムで、WEBクライアント認証を実装してみます.<br>
+最初は <a class="gblog-markdown__link" href="https://jp.vuejs.org/index.html">Vue.js</a> での Firebase への接続からです.</p>
         </section>
         <div class="gblog-post__readmore">
             
@@ -371,6 +371,7 @@ if (!doNotTrack) {
 
         <footer class="gblog-footer">
     <nav class="container">
+        <a href="#" id="back-to-top"></a>
         <section class="flex flex-wrap align-center">
             
             
@@ -411,7 +412,7 @@ if (!doNotTrack) {
                 Built with <a href="https://gohugo.io/" class="gblog-footer__link">Hugo</a> and
                 <svg class="icon gblog_heart"><use xlink:href="#gblog_heart"></use></svg>
             </span>
-            <span style="margin-left:300px;">
+            <span style="margin-left:auto; margin-right: 0; font-size:10px;">
                 Copyright (c) 2021, TECHaas.com. All rights reserved.
             </span>
         </section>
@@ -426,5 +427,20 @@ if (!doNotTrack) {
 <script defer src="/js/clipboard-loader-f0b5fbd5f6.min.js"></script>
 
 
+
+<script>
+var scroll_to_top = document.getElementById('back-to-top');
+window.onscroll = function(ev) {
+    var scrollTop = window.pageYOffset || document.body.scrollTop;
+    if (scrollTop > 300) {
+        scroll_to_top.style.display = 'block';
+    } else {
+        scroll_to_top.style.display = 'none';   
+    }
+};
+scroll_to_top.onclick = function () {
+    window.scrollTo(0,0);
+}
+</script>
 </body>
 </html>
