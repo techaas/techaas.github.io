@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Authors on Techaas.net</title>
+    <title>Authors on TECHaas</title>
     <link>http://www.techaas.net/authors/</link>
-    <description>Recent content in Authors on Techaas.net</description>
+    <description>Recent content in Authors on TECHaas</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja</language><atom:link href="http://www.techaas.net/authors/index.xml" rel="self" type="application/rss+xml" />
   </channel>
