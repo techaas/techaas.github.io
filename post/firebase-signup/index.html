@@ -106,7 +106,7 @@
         }
     },
     "url" : "http:\/\/www.techaas.net\/post\/firebase-signup\/",
-    "wordCount" : "539",
+    "wordCount" : "544",
     "genre" : [ "Web" ]
 }
 </script>
@@ -390,8 +390,10 @@ export default {
 <p><code>catch</code> の処理ですが、firebase のエラーコードをみて、適当な日本語メッセージを出します。メッセージは、 <code>fbMessage.js</code> に定義しています。
 (本来は他言語対応とかしておくと良いですが、今回は省略)</p>
 <p>出力されるエラーコードは、<a class="gblog-markdown__link" href="%60https://firebase.google.com/docs/auth/admin/errors%60">Admin Authentication API エラー</a> に一覧があるので、適宜翻訳を追加していきます。
-該当するエラーコードがない場合には、オリジナルの英語のメッセージが表示されます。
-<br /><br /></p>
+該当するエラーコードがない場合には、オリジナルの英語のメッセージが表示されます。</p>
+<p>ユーザ登録が行われると、 Firebase コンソールの <code>Authentication</code> に追加されていきます。</p>
+<img src="/img/SS_2021-07-16_11.48.34.png" width="600" style="border:1px solid black;"/>
+<br /><br />
 <div class="gblog-post__anchorwrap">
     <h2 id="ログイン画面の実装">
         ログイン画面の実装
