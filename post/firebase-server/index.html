@@ -2,7 +2,6 @@
 <html itemscope itemtype="http://schema.org/WebPage" lang="en">
 
 <head>
-	<meta name="generator" content="Hugo 0.85.0" />
     <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -11,7 +10,8 @@
 
 
 
-    <meta name="description" content="Techaas.net">
+    <meta name="description" content="「Firebase のユーザー認証システムで、WEBクライアント認証を実装してみます」 の続きです.
+今回は、サーバ側で認証済のクライアントか確認してみるです。">
 
 
 
@@ -23,7 +23,7 @@
     
 
 
-    <title>Techaas.net</title>
+    <title>Firebase Auth (その3) | Techaas.net</title>
 
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
@@ -31,15 +31,19 @@
 
     
 
-    <meta property="og:title" content="Techaas.net" />
-<meta property="og:description" content="" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="http://www.techaas.net/" />
+    <meta property="og:title" content="Firebase Auth (その3)" />
+<meta property="og:description" content="「Firebase のユーザー認証システムで、WEBクライアント認証を実装してみます」 の続きです.
+今回は、サーバ側で認証済のクライアントか確認してみるです。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://www.techaas.net/post/firebase-server/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-07-16T00:00:01+09:00" />
+<meta property="article:modified_time" content="2021-07-16T00:00:01+09:00" />
 
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Techaas.net"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:title" content="Firebase Auth (その3)"/>
+<meta name="twitter:description" content="「Firebase のユーザー認証システムで、WEBクライアント認証を実装してみます」 の続きです.
+今回は、サーバ側で認証済のクライアントか確認してみるです。"/>
 
 
     <link rel="preload" as="font" href="/fonts/Metropolis.woff2" type="font/woff2" crossorigin="anonymous">
@@ -64,14 +68,46 @@
 <!-- Made with Geekblog theme https://github.com/thegeeklab/hugo-geekblog -->
 
     
+
+
+
+
 <script type="application/ld+json">
 {
     "@context": "http://schema.org",
-    "@type": "WebSite",
-    
-    "name": "Techaas.net",
-    "url": "http:\/\/www.techaas.net\/",
-    "thumbnailUrl": "http:\/\/www.techaas.net\/brand.svg"
+    "@type": "BlogPosting",
+    "articleSection": "post",
+    "name": "Firebase Auth (その3)",
+    "headline": "Firebase Auth (その3)",
+    "alternativeHeadline": "",
+    "description": "\u003cp\u003e「Firebase のユーザー認証システムで、WEBクライアント認証を実装してみます」 の続きです.\u003cbr\u003e\n今回は、サーバ側で認証済のクライアントか確認してみるです。\u003c\/p\u003e",
+    "inLanguage": "en",
+    "isFamilyFriendly": "true",
+    "mainEntityOfPage": {
+        "@type": "WebPage",
+        "@id": "http:\/\/www.techaas.net\/post\/firebase-server\/"
+    },
+    "author" : [
+    ],
+    "copyrightHolder" : "Techaas.net",
+    "copyrightYear" : "2021",
+    "dateCreated": "2021-07-16T00:00:01.00Z",
+    "datePublished": "2021-07-16T00:00:01.00Z",
+    "dateModified": "2021-07-16T00:00:01.00Z",
+    "publisher":{
+        "@type":"Organization",
+        "name": "Techaas.net",
+        "url": "http://www.techaas.net/",
+        "logo": {
+            "@type": "ImageObject",
+            "url": "http:\/\/www.techaas.net\/brand.svg",
+            "width":"32",
+            "height":"32"
+        }
+    },
+    "url" : "http:\/\/www.techaas.net\/post\/firebase-server\/",
+    "wordCount" : "352",
+    "genre" : [ "Web" ]
 }
 </script>
 
@@ -173,257 +209,192 @@ if (!doNotTrack) {
 
         <main class="gblog-page container">
             
-    
-    
-        
-    
-
-    
-    
     <article class="gblog-post">
         <header class="gblog-post__header">
-            <h1><a href="/post/firebase-server/">Firebase Auth (その3)</a></h1>
+            
+            
+
+            <h1>Firebase Auth (その3)</h1>
+            
+            <div class="gblog-post__meta">
+                <span class="no-wrap">
+                    <svg class="icon gblog_date"><use xlink:href="#gblog_date"></use></svg>
+                    <span class="gblog-post__tag">
+                        <time datetime="2021-07-16T00:00:01&#43;09:00">
+                            
+                            Jul 16, 2021
+                        </time>
+                    </span>
+                </span>
+
+                <span class="no-wrap">
+                    <svg class="icon gblog_timer"><use xlink:href="#gblog_timer"></use></svg>
+                    <span class="gblog-post__tag">2 min read</span>
+                </span>
+            </div>
+            
         </header>
 
         <section class="gblog-markdown">
             <p>「Firebase のユーザー認証システムで、WEBクライアント認証を実装してみます」 の続きです.<br>
 今回は、サーバ側で認証済のクライアントか確認してみるです。</p>
+  <div class="gblog-toc gblog-toc__level--6"><nav id="TableOfContents"><ul>
+        <li><a href="#クライアントで-jwt-を取得する">クライアントで JWT を取得する</a></li>
+        <li><a href="#authorization-ヘッダー">Authorization ヘッダー</a></li>
+        <li><a href="#テストサーバ">テストサーバ</a></li>
+        <li><a href="#終わりに">終わりに</a></li>
+      </ul></nav><hr></div>
+
+
+<div class="gblog-post__anchorwrap">
+    <h2 id="クライアントで-jwt-を取得する">
+        クライアントで JWT を取得する
+        <a data-clipboard-text="http://www.techaas.net/post/firebase-server/#クライアントで-jwt-を取得する" class="gblog-post__anchor gblog-post__anchor--right clip" aria-label="Anchor クライアントで JWT を取得する" href="#%e3%82%af%e3%83%a9%e3%82%a4%e3%82%a2%e3%83%b3%e3%83%88%e3%81%a7-jwt-%e3%82%92%e5%8f%96%e5%be%97%e3%81%99%e3%82%8b">
+            <svg class="icon gblog_link"><use xlink:href="#gblog_link"></use></svg>
+        </a>
+    </h2>
+</div><p>前回までにクライアント側でログイン認証を行うところまで完了しました。
+次にサーバ側で、正しくログインされたクライアントからのアクセスか判断する方法を見てみます。</p>
+<p>サーバ側で、許可されたデバイス (クライアント) からのアクセスか判定するために <code>JWT(JSON Web Token)</code> と呼ばれる仕組みが使われます。</p>
+<p>JWT の詳しい説明は省きますが、簡単にいうと、デバイスの属性情報の JSON に署名をしたものになります。
+サーバ側では署名を検証することで、正規のデバイス (今回は、正しくログインされた WEB クライアント) かどうかを判断して処理をするか決めます。</p>
+<p>Firebase では、JWT を得るために、 <code>getIdToken()</code> を使います。 前回、 <code>Home.vue</code> のところで後ほどと書いた部分です。</p>
+<pre><code>  mounted: function () {
+    firebase.auth().onAuthStateChanged((user) =&gt; {
+      if (user) {
+        // ログインしていれば中通る
+        this.user = user;
+        user.getIdToken(true).then((token) =&gt; {
+          this.token = token;
+          let tokens = token.split('.');
+          console.log(base64url.decode(tokens[0]));
+          console.log(base64url.decode(tokens[1]));
+        });
+      } else {
+        this.token = null;
+      }
+    });
+  },
+</code></pre><p>上のコードでは、中身を確認するために、ログ出力しています。
+JWT は、 base64url (URL セーフな base64 エンコード) された JSON データです。
+<code>ヘッダー</code>、<code>ペイロード</code>、<code>署名</code> の3つ部分を &lsquo;.&rsquo; で連結したものです。
+<br /><br /></p>
+<div class="gblog-post__anchorwrap">
+    <h2 id="authorization-ヘッダー">
+        Authorization ヘッダー
+        <a data-clipboard-text="http://www.techaas.net/post/firebase-server/#authorization-ヘッダー" class="gblog-post__anchor gblog-post__anchor--right clip" aria-label="Anchor Authorization ヘッダー" href="#authorization-%e3%83%98%e3%83%83%e3%83%80%e3%83%bc">
+            <svg class="icon gblog_link"><use xlink:href="#gblog_link"></use></svg>
+        </a>
+    </h2>
+</div><p>JWT をサーバーに送る必要がありますが、Web クライアントから API を叩くことを仮定して <code>axios</code> でサーバをアクセスするときに、トークンを追加するようにしてみます。</p>
+<p><code>onVerifyID</code> メソッドを <code>&lt;a&gt;</code> アンカーから呼びます。呼び出す処理は以下になります。</p>
+<pre><code>  methods: {
+    onVerifyID: function () {
+      console.log(&quot;onVerifyID&quot;);
+      const config = {
+        headers: { Authorization: `Bearer ${this.token}` },
+      };
+      this.verifyResult = null;
+      const api_client = axios.create();
+      api_client
+        .get(API_URL, config)
+        .then((result) =&gt; {
+          console.log(result);
+          this.verifyResult = result.data;
+          })
+        .catch((err) =&gt; {
+          console.log(err);
+          this.verifyResult = 'エラー';
+        });
+    },
+  },
+</code></pre><p><code>axios</code> で HTTP リクエストする際のヘッダーに、 <code>Authorization: Bearer </code> + <code>JWTトークン</code> を追加します。
+今回はリクエストは 1箇所だけなので、直接ヘッダーを指定していますが、通常なら defaults config などで設定すると思います。</p>
+<p><code>API_URL</code> には、アクセステストをするための URL を指定しますが、この受け口は、次に作成します。</p>
+<p>ここまでの変更は、 <a class="gblog-markdown__link" href="https://github.com/techaas/vue-firebase-auth/tree/feature/request_headers">request_headers ブランチ</a> で確認できます。
+<br /><br /></p>
+<div class="gblog-post__anchorwrap">
+    <h2 id="テストサーバ">
+        テストサーバ
+        <a data-clipboard-text="http://www.techaas.net/post/firebase-server/#テストサーバ" class="gblog-post__anchor gblog-post__anchor--right clip" aria-label="Anchor テストサーバ" href="#%e3%83%86%e3%82%b9%e3%83%88%e3%82%b5%e3%83%bc%e3%83%90">
+            <svg class="icon gblog_link"><use xlink:href="#gblog_link"></use></svg>
+        </a>
+    </h2>
+</div><p>サーバ側ですが、認証情報のテストをする必要最低限の実装をします。</p>
+<p>Node.js の express でサーバを準備します。サーバ側も詳しく説明していくと長くなるので、
+ここでは簡単にキモになるところだけ触れます。</p>
+<pre><code>const express = require('express');
+const cors = require('cors');
+const admin = require('firebase-admin');
+
+const serviceAccount = require('./serviceAccount.json');
+
+admin.initializeApp({
+  credential: admin.credential.cert(serviceAccount),
+});
+</code></pre><p><code>admin</code> がFirebase のサーバ側の管理 API です。 <code>admin.initializeApp()</code> で API に接続します。
+Firebase Admin API にアクセするためには、サービスアカウントを通したアクセスが必要になります。
+Google のクラウド上で実行している場合には自動的に設定されますが、ここではローカルでテストしているので、
+ローカルファイルに配置した認証情報を読み込んで、 <code>credential</code> に設定しています。</p>
+<pre><code>const app = express();
+app.use(cors());
+
+app.get('/', verifyToken, (req, res) =&gt; {
+  // console.log(req);
+  res.status(200).send('IDを確認しました.').end();
+});
+
+function verifyToken(req, res, next) {
+  const bearerHeader = req.headers['authorization'];
+  if (typeof bearerHeader !== 'undefined') {
+    const bearer = bearerHeader.split(' ');
+    const token = bearer[1];
+    // console.log('token:', token);
+    admin
+      .auth()
+      .verifyIdToken(token)
+      // eslint-disable-next-line no-unused-vars
+      .then((_decoded) =&gt; {
+        // console.log('verified:', decoded);
+        // req.local = decoded.name;
+        next();
+      })
+      .catch(error =&gt; {
+        console.log(error);
+        res.sendStatus(500);
+      });
+  } else {
+    res.sendStatus(403);
+  }
+}
+</code></pre><p><code>get('/')</code> にミドルウェア <code>verifyToken</code> を噛ませます。</p>
+<p>この中が、クライアントから送られた JWT の検証をしている部分になります。
+<code>Authorization: Bearer</code> ヘッダーに追加されてきた JWT (クライアント側で <code>getIdToken()</code> で取得したもの) を
+<code>verifyIdToken()</code> に渡すと、あとは勝手に署名を検証してくれます。</p>
+<pre><code>// Start the server
+const PORT = process.env.PORT || 8030;
+app.listen(PORT, () =&gt; {
+  console.log(`App listening on port ${PORT}`);
+  console.log('Press Ctrl+C to quit.');
+});
+// [END gae_node_request_example]
+
+module.exports = app;
+</code></pre><p>残りは、サーバ を準備するだけです。</p>
+<p>サーバ側のコードのリポジトリは準備中です。</p>
+<div class="gblog-post__anchorwrap">
+    <h2 id="終わりに">
+        終わりに
+        <a data-clipboard-text="http://www.techaas.net/post/firebase-server/#終わりに" class="gblog-post__anchor gblog-post__anchor--right clip" aria-label="Anchor 終わりに" href="#%e7%b5%82%e3%82%8f%e3%82%8a%e3%81%ab">
+            <svg class="icon gblog_link"><use xlink:href="#gblog_link"></use></svg>
+        </a>
+    </h2>
+</div><p>Firebase の Authentication を使って、 Web クライアントにユーザー認証の機能を組み込んでみました。
+実際のコードを見ると分かるかと思いますが、実装の方は API 側に任せっきりで、コードとしては、
+ほぼ 1行呼び出しで済んでしまう良い時代になったという感じです。</p>
+
         </section>
-        <div class="gblog-post__readmore">
-            
-            <a class="flex-inline align-center fake-link" title="Read full post" href="/post/firebase-server/">Read full post</a>
-            
-        </div>
-
-        <footer class="gblog-post__footer">
-            <span class="no-wrap">
-                <svg class="icon gblog_date"><use xlink:href="#gblog_date"></use></svg>
-                <span class="gblog-post__tag">
-                    <time datetime="2021-07-16T00:00:01&#43;09:00">
-                        
-                        Jul 16, 2021
-                    </time>
-                </span>
-            </span>
-
-            <span class="no-wrap">
-                <svg class="icon gblog_timer"><use xlink:href="#gblog_timer"></use></svg>
-                <span class="gblog-post__tag">2 min read</span>
-            </span>
-
-            
-
-            
-            
-
-            
-            
-            
-                
-                
-                    
-                    <span class="no-wrap">
-                    <svg class="icon gblog_bookmarks"><use xlink:href="#gblog_bookmarks"></use></svg>
-                    
-<span class="gblog-post__tag gblog-button">
-    <a class="gblog-button__link" href="/tags/Web/" title="All posts tagged with 'Web'">Web</a>
-</span>
-
-                    </span>
-                    
-                
-                
-            
-            
-        </footer>
     </article>
-    
-    <article class="gblog-post">
-        <header class="gblog-post__header">
-            <h1><a href="/post/firebase-signup/">Firebase Auth (その2)</a></h1>
-        </header>
-
-        <section class="gblog-markdown">
-            <p>「Firebase のユーザー認証システムで、WEBクライアント認証を実装してみます」 の続きです.<br>
-今回はユーザ登録と、認証画面を追加して、ログイン・ログアウトを試してみます.</p>
-        </section>
-        <div class="gblog-post__readmore">
-            
-            <a class="flex-inline align-center fake-link" title="Read full post" href="/post/firebase-signup/">Read full post</a>
-            
-        </div>
-
-        <footer class="gblog-post__footer">
-            <span class="no-wrap">
-                <svg class="icon gblog_date"><use xlink:href="#gblog_date"></use></svg>
-                <span class="gblog-post__tag">
-                    <time datetime="2021-07-15T00:00:01&#43;09:00">
-                        
-                        Jul 15, 2021
-                    </time>
-                </span>
-            </span>
-
-            <span class="no-wrap">
-                <svg class="icon gblog_timer"><use xlink:href="#gblog_timer"></use></svg>
-                <span class="gblog-post__tag">3 min read</span>
-            </span>
-
-            
-
-            
-            
-
-            
-            
-            
-                
-                
-                    
-                    <span class="no-wrap">
-                    <svg class="icon gblog_bookmarks"><use xlink:href="#gblog_bookmarks"></use></svg>
-                    
-<span class="gblog-post__tag gblog-button">
-    <a class="gblog-button__link" href="/tags/Web/" title="All posts tagged with 'Web'">Web</a>
-</span>
-
-                    </span>
-                    
-                
-                
-            
-            
-        </footer>
-    </article>
-    
-    <article class="gblog-post">
-        <header class="gblog-post__header">
-            <h1><a href="/post/firebase-auth/">Firebase Auth (その1)</a></h1>
-        </header>
-
-        <section class="gblog-markdown">
-            <p><a class="gblog-markdown__link" href="https://firebase.google.com/">Firebase</a> のユーザー認証システムで、WEBクライアント認証を実装してみます.<br>
-最初は <a class="gblog-markdown__link" href="https://jp.vuejs.org/index.html">Vue.js</a> での Firebase への接続からです.</p>
-        </section>
-        <div class="gblog-post__readmore">
-            
-            <a class="flex-inline align-center fake-link" title="Read full post" href="/post/firebase-auth/">Read full post</a>
-            
-        </div>
-
-        <footer class="gblog-post__footer">
-            <span class="no-wrap">
-                <svg class="icon gblog_date"><use xlink:href="#gblog_date"></use></svg>
-                <span class="gblog-post__tag">
-                    <time datetime="2021-07-14T00:00:01&#43;09:00">
-                        
-                        Jul 14, 2021
-                    </time>
-                </span>
-            </span>
-
-            <span class="no-wrap">
-                <svg class="icon gblog_timer"><use xlink:href="#gblog_timer"></use></svg>
-                <span class="gblog-post__tag">1 min read</span>
-            </span>
-
-            
-
-            
-            
-
-            
-            
-            
-                
-                
-                    
-                    <span class="no-wrap">
-                    <svg class="icon gblog_bookmarks"><use xlink:href="#gblog_bookmarks"></use></svg>
-                    
-<span class="gblog-post__tag gblog-button">
-    <a class="gblog-button__link" href="/tags/Web/" title="All posts tagged with 'Web'">Web</a>
-</span>
-
-                    </span>
-                    
-                
-                
-            
-            
-        </footer>
-    </article>
-    
-    <article class="gblog-post">
-        <header class="gblog-post__header">
-            <h1><a href="/post/video-player/">Video Player</a></h1>
-        </header>
-
-        <section class="gblog-markdown">
-            <p>Android / iOS の両方でビデオ再生するサンプルです.<br>
-一番簡単に AV 再生コードを書くとこんな感じになる例です.</p>
-        </section>
-        <div class="gblog-post__readmore">
-            
-            <a class="flex-inline align-center fake-link" title="Read full post" href="/post/video-player/">Read full post</a>
-            
-        </div>
-
-        <footer class="gblog-post__footer">
-            <span class="no-wrap">
-                <svg class="icon gblog_date"><use xlink:href="#gblog_date"></use></svg>
-                <span class="gblog-post__tag">
-                    <time datetime="2021-03-01T00:00:00&#43;09:00">
-                        
-                        Mar 1, 2021
-                    </time>
-                </span>
-            </span>
-
-            <span class="no-wrap">
-                <svg class="icon gblog_timer"><use xlink:href="#gblog_timer"></use></svg>
-                <span class="gblog-post__tag">1 min read</span>
-            </span>
-
-            
-
-            
-            
-
-            
-            
-            
-                
-                
-                    
-                    <span class="no-wrap">
-                    <svg class="icon gblog_bookmarks"><use xlink:href="#gblog_bookmarks"></use></svg>
-                    
-<span class="gblog-post__tag gblog-button">
-    <a class="gblog-button__link" href="/tags/Mobile/" title="All posts tagged with 'Mobile'">Mobile</a>
-</span>
-
-                    </span>
-                    
-                
-                
-            
-            
-        </footer>
-    </article>
-    
-    
-
-<nav class="gblog-paging flex flex-even align-center" role="navigation">
-    <div class="gblog-paging__item gblog-paging__item--prev">
-    
-    </div>
-    <div class="gblog-paging__state">Page 1 of 1</div>
-    <div class="gblog-paging__item gblog-paging__item--next">
-    
-    </div>
-</nav>
-
 
         </main>
 
