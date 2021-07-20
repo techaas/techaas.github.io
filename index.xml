@@ -8,7 +8,7 @@
     <language>ja</language>
     <lastBuildDate>Fri, 16 Jul 2021 00:00:01 +0900</lastBuildDate><atom:link href="http://www.techaas.net/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Firebase Auth (その3)</title>
+      <title>Firebase Authentication - その3</title>
       <link>http://www.techaas.net/post/firebase-server/</link>
       <pubDate>Fri, 16 Jul 2021 00:00:01 +0900</pubDate>
       
@@ -18,7 +18,7 @@
     </item>
     
     <item>
-      <title>Firebase Auth (その2)</title>
+      <title>Firebase Authentication - その2</title>
       <link>http://www.techaas.net/post/firebase-signup/</link>
       <pubDate>Thu, 15 Jul 2021 00:00:01 +0900</pubDate>
       
@@ -28,7 +28,7 @@
     </item>
     
     <item>
-      <title>Firebase Auth (その1)</title>
+      <title>Firebase Authentication - その1</title>
       <link>http://www.techaas.net/post/firebase-auth/</link>
       <pubDate>Wed, 14 Jul 2021 00:00:01 +0900</pubDate>
       
