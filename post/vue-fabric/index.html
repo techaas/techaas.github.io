@@ -106,7 +106,7 @@ Vue.js に組み込んでみたので、その辺を。"/>
         }
     },
     "url" : "http:\/\/www.techaas.net\/post\/vue-fabric\/",
-    "wordCount" : "458",
+    "wordCount" : "698",
     "genre" : [ "Web" , "Vue" ]
 }
 </script>
@@ -243,7 +243,7 @@ if (!doNotTrack) {
 
                 <span class="no-wrap">
                     <svg class="icon gblog_timer"><use xlink:href="#gblog_timer"></use></svg>
-                    <span class="gblog-post__tag">3 min read</span>
+                    <span class="gblog-post__tag">4 min read</span>
                 </span>
             </div>
             
@@ -257,6 +257,7 @@ if (!doNotTrack) {
         <li><a href="#typescript-で-vuejs">typescript で Vue.js</a></li>
         <li><a href="#キャンバス---fabriccanvas">キャンバス - fabric.Canvas</a></li>
         <li><a href="#描画オブジェクト---fabricrect">描画オブジェクト - fabric.Rect</a></li>
+        <li><a href="#イベントハンドリング">イベントハンドリング</a></li>
       </ul></nav><hr></div>
 
 
@@ -270,10 +271,10 @@ if (!doNotTrack) {
 </div><p>Fabric.js は、HTML5 の Canvas を js で扱うためのライブラリです。</p>
 <p>2D 図形や描画したものをオブジェクトとして制御することができるようになります。
 また、普通の HTML要素じゃちょっと難しいかなレベルの細かい図形描画が可能です。</p>
-<p>どんなことができるのかは、 <a class="gblog-markdown__link" href="http://fabricjs.com/demos/">Fabric.js のDemo</a> ページあたりを見てください。</p>
+<p>どんなことができるのかは、 <a class="gblog-markdown__link" href="http://fabricjs.com/demos/">[Fabric.js のDemo]</a> ページあたりを見てください。</p>
 <p>Fabric.js の描画要素は javascript object になります。 土台になるキャンバスは、 <code>fabric.Canvas</code> で作成します。
 その上に、例えば四角を描きたかったら、 <code>fabric.Rect</code> を作成し、キャンバスに <code>add</code> すると、後は勝手に描画してくれます。</p>
-<p>Fabric.js の <a class="gblog-markdown__link" href="http://fabricjs.com/fabric-intro-part-1">イントロダクション</a> にあるサンプルコードだと、こんな感じです。</p>
+<p>Fabric.js の <a class="gblog-markdown__link" href="http://fabricjs.com/fabric-intro-part-1">[イントロダクション]</a> にあるサンプルコードだと、こんな感じです。</p>
 <pre><code>// create a wrapper around native canvas element (with id=&quot;c&quot;)
 var canvas = new fabric.Canvas('c');
 
@@ -288,7 +289,7 @@ var rect = new fabric.Rect({
 
 // &quot;add&quot; rectangle onto canvas
 canvas.add(rect);
-</code></pre><p>ここでは、 <a class="gblog-markdown__link" href="http://fabricjs.com/controls">オブジェクトの制御のデモ</a> に似たようなことを Vue.js でやってみます。
+</code></pre><p>ここでは、 <a class="gblog-markdown__link" href="http://fabricjs.com/controls">[オブジェクトの制御のデモ]</a> に似たようなことを Vue.js でやってみます。
 <br /><br /></p>
 <div class="gblog-post__anchorwrap">
     <h2 id="typescript-で-vuejs">
@@ -450,8 +451,82 @@ FabricRect の <code>watch</code> で、 <code>canvas</code> を見ているの�
 生成された <code>fabric.Rect</code> はキャンバスに追加されることで描画されるという流れになります。</p>
 <p>できあがると、こんな画面になるはずです。キャンバス上に描画した四角をコントローラで制御するインタラクティンブな描画が簡単に実現できます。</p>
 <img src="/img/SS_2021-07-20_15.59.27.png" style="border:1px solid black;"/>
-<p>ソースコードは、 <a class="gblog-markdown__link" href="https://github.com/techaas/vue-fabric-test">github の vue-fabric-test</a> にあります。
+<p>ソースコードは、 <a class="gblog-markdown__link" href="https://github.com/techaas/vue-fabric-test/tree/basic">[github の vue-fabric-test (basic) ]</a> に置いてあります。
 <br /><br /></p>
+<div class="gblog-post__anchorwrap">
+    <h2 id="イベントハンドリング">
+        イベントハンドリング
+        <a data-clipboard-text="http://www.techaas.net/post/vue-fabric/#イベントハンドリング" class="gblog-post__anchor gblog-post__anchor--right clip" aria-label="Anchor イベントハンドリング" href="#%e3%82%a4%e3%83%99%e3%83%b3%e3%83%88%e3%83%8f%e3%83%b3%e3%83%89%e3%83%aa%e3%83%b3%e3%82%b0">
+            <svg class="icon gblog_link"><use xlink:href="#gblog_link"></use></svg>
+        </a>
+    </h2>
+</div><p>基本的な描画はできるようになりました。 fabric では描画要素をユーザが操作することができます。
+(もちろん静的に描画するだけってのも可能です)</p>
+<p>今回の実装では、 fabric オブジェクトは Vue の値で作成するだけで、その後は両方の座標値などのプロパティは独立しています。
+きちんと実装するなら、 Vue のプロパティと fabric オブジェクトのプロパティを双方向バインディングすると良いのですが、ちょっと面倒です。</p>
+<p>そこで、簡易的に fabric のイベントハンドラーで Vue 側の値を書き換えるようにしてみます。</p>
+<p>最終的なソースコードは、<a class="gblog-markdown__link" href="https://github.com/techaas/vue-fabric-test/tree/develop">[vue-fabric-test (developブランチ) ]</a> にあります。</p>
+<p>fabric は、ユーザ操作後にイベントを発生しますので、ハンドラを定義して、Vue側のプロパティを書き換えるようにします。</p>
+<p><code>FabricRect</code> で fabric オブジェクトを生成した後にハンドラを登録します。</p>
+<pre><code>      rect.on('moved', () =&gt; {
+        const coord = [
+          Math.round(rect.left!),
+          Math.round(rect.top!),
+          Math.round(rect.width! * rect.scaleX!),
+          Math.round(rect.height! * rect.scaleY!),
+        ];
+        this.$emit('coord-change', coord, 'moved');
+      });
+      rect.on('scaled', () =&gt; {
+        const coord = [
+          Math.round(rect.left!),
+          Math.round(rect.top!),
+          Math.round(rect.width! * rect.scaleX!),
+          Math.round(rect.height! * rect.scaleY!),
+        ];
+        this.$emit('coord-change', coord, 'scaled');
+      });
+</code></pre><p><code>moved</code> / <code>scaled</code> は、それぞれオブジェクトの移動後、拡大縮小後におきます。　他にもイベントがありますので、きちんとやるなら
+そちらもハンドルした方が良いですが、今回は省略。　</p>
+<p>また、ハンドラの使い方として、 <code>moving</code> / <code>scaling</code> などでユーザの操作中にフックする等も可能です。
+一覧については、 <a class="gblog-markdown__link" href="http://fabricjs.com/events">[fabric のイベント]</a> あたりを参照。 <code>objects events</code> に分類されている
+ものがオブジェクトの操作時に起きます。</p>
+<p>ハンドラの中身を見ていきます。 fabric の座標値は浮動小数です。 Vue 側では整数値で処理しているので、 <code>Math.round</code> で四捨五入します。</p>
+<p><code>width</code> / <code>height</code> についてですが、 fabric では拡大縮小すると <code>scaleX</code> / <code>scaleY</code> の倍率が変更されるだけになります。
+実際の数値を掛け算で求めてから、四捨五入して Vue 側の値を算出します。</p>
+<p><code>$emit</code> でイベントとして送出します。</p>
+<p>この記事の最初の方では、座標値を数値の配列 (<code>numnber[]</code>)として扱っていましたが、 ここでは、<code>FabricRect</code> の座標値として、 <code>App.vue</code> に <code>interface</code> を定義しています。</p>
+<pre><code>export interface rectRecord {
+  x: number;
+  y: number;
+  w: number;
+  h: number;
+  fill: string;
+}
+
+interface DataType {
+  rects: rectRecord[];
+}
+</code></pre><p><code>App.vue</code> で <code>rects: rectRecord[]</code> を定義して、 <code>FabricCanvas</code> に渡します。 <code>FabricCanvas</code> では、 <code>FabricRect</code> を <code>v-for</code> で生成します。</p>
+<p>さて、 fabric 側で変更された値は、 <code>FabricRect</code> から <code>coord-change</code> と名前をつけて <code>$emit</code> したのは上で見ました。
+それを <code>FabricCanvas</code> で受けて、どの <code>FabricRect</code> から発報されたものか <code>index</code> を追加して、 <code>App</code> に流します。</p>
+<pre><code>&lt;template&gt;
+  ...
+        @coord-change=&quot;(coord, event) =&gt; $emit('coord-change', index, coord, event)&quot; /&gt;
+  ...
+&lt;template&gt;
+</code></pre><p><code>App.vue</code> では、それを受けて、 <code>handleCoordChange</code> メソッドを呼び出します。</p>
+<pre><code>&lt;template&gt;
+  ...
+      @coord-change=&quot;handleCoordChange&quot; /&gt;
+  ...
+&lt;template&gt;
+</code></pre><p>そこで、 <code>data</code> の内部値を書き換えるようになります。 これで fabric での値の変更を Vue 側に反映することができるようになります。</p>
+<img src="/img/SS_2021-07-21_11.33.58.png" width="600" style="border:1px solid black;"/>
+<p>このスクリーションショットでは、 chrome に <code>Vue.js devtools</code> を組み込んでいます。 <code>devtools</code> を使うと、 chrome の デベロッパーツールから、 Vue の内部プロパティ等をリアルタイムでデバッグできるようになります。 (ただ、開発サーバ上しか動作しません。)</p>
+<p>残りとして、Vue 側での値に reactive に fabric を合わせることで双方向バインディングできるようになりますが、そちらは省略します。
+ヒントとしては、 fabric オブジェクトに値を <code>set()</code> してから、 <code>setCoord()</code> を使うことで、オブジェクトを変更に合わせて描画させることができます。</p>
+<p>reactive なフレームワークを使う利点としては、 Single Source of Truth が実現しやすいことが挙げられるので、是非その辺挑戦してみてください。</p>
 
         </section>
     </article>
