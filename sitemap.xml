@@ -3,13 +3,19 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>http://www.techaas.net/post/</loc>
-    <lastmod>2021-07-20T00:00:01+09:00</lastmod>
+    <lastmod>2021-07-25T00:00:01+09:00</lastmod>
+  </url><url>
+    <loc>http://www.techaas.net/tags/Security/</loc>
+    <lastmod>2021-07-25T00:00:01+09:00</lastmod>
   </url><url>
     <loc>http://www.techaas.net/tags/</loc>
-    <lastmod>2021-07-20T00:00:01+09:00</lastmod>
+    <lastmod>2021-07-25T00:00:01+09:00</lastmod>
   </url><url>
     <loc>http://www.techaas.net/</loc>
-    <lastmod>2021-07-20T00:00:01+09:00</lastmod>
+    <lastmod>2021-07-25T00:00:01+09:00</lastmod>
+  </url><url>
+    <loc>http://www.techaas.net/post/secure-communication/</loc>
+    <lastmod>2021-07-25T00:00:01+09:00</lastmod>
   </url><url>
     <loc>http://www.techaas.net/tags/Vue/</loc>
     <lastmod>2021-07-20T00:00:01+09:00</lastmod>

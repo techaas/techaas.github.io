@@ -10,8 +10,8 @@
 
 
 
-    <meta name="description" content="HTML5 Canvas Library の Fabric.js を
-Vue.js に組み込んでみたので、その辺を。">
+    <meta name="description" content="インターネットなどの公衆回線を通じてデータを交換する場合、避けて通れないのが暗号化です.
+今回は、データや通信の暗号化技術について、少し見てみます。">
 
 
 
@@ -23,7 +23,7 @@ Vue.js に組み込んでみたので、その辺を。">
     
 
 
-    <title>Vue で Fabric.js | TECHaas</title>
+    <title>セキュアな通信 | TECHaas</title>
 
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
@@ -31,19 +31,19 @@ Vue.js に組み込んでみたので、その辺を。">
 
     
 
-    <meta property="og:title" content="Vue で Fabric.js" />
-<meta property="og:description" content="HTML5 Canvas Library の Fabric.js を
-Vue.js に組み込んでみたので、その辺を。" />
+    <meta property="og:title" content="セキュアな通信" />
+<meta property="og:description" content="インターネットなどの公衆回線を通じてデータを交換する場合、避けて通れないのが暗号化です.
+今回は、データや通信の暗号化技術について、少し見てみます。" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://www.techaas.net/post/vue-fabric/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2021-07-20T00:00:01+09:00" />
-<meta property="article:modified_time" content="2021-07-20T00:00:01+09:00" />
+<meta property="og:url" content="http://www.techaas.net/post/secure-communication/" /><meta property="article:section" content="post" />
+<meta property="article:published_time" content="2021-07-25T00:00:01+09:00" />
+<meta property="article:modified_time" content="2021-07-25T00:00:01+09:00" />
 
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Vue で Fabric.js"/>
-<meta name="twitter:description" content="HTML5 Canvas Library の Fabric.js を
-Vue.js に組み込んでみたので、その辺を。"/>
+<meta name="twitter:title" content="セキュアな通信"/>
+<meta name="twitter:description" content="インターネットなどの公衆回線を通じてデータを交換する場合、避けて通れないのが暗号化です.
+今回は、データや通信の暗号化技術について、少し見てみます。"/>
 
 
     <link rel="preload" as="font" href="/fonts/Metropolis.woff2" type="font/woff2" crossorigin="anonymous">
@@ -77,23 +77,23 @@ Vue.js に組み込んでみたので、その辺を。"/>
     "@context": "http://schema.org",
     "@type": "BlogPosting",
     "articleSection": "post",
-    "name": "Vue で Fabric.js",
-    "headline": "Vue で Fabric.js",
+    "name": "セキュアな通信",
+    "headline": "セキュアな通信",
     "alternativeHeadline": "",
-    "description": "\u003cp\u003eHTML5 Canvas Library の \u003ca class=\u0022gblog-markdown__link\u0022 href=\u0022http:\/\/fabricjs.com\/\u0022\u003eFabric.js\u003c\/a\u003e を\n\u003ca class=\u0022gblog-markdown__link\u0022 href=\u0022https:\/\/jp.vuejs.org\/index.html\u0022\u003eVue.js\u003c\/a\u003e に組み込んでみたので、その辺を。\u003c\/p\u003e",
+    "description": "\u003cp\u003eインターネットなどの公衆回線を通じてデータを交換する場合、避けて通れないのが暗号化です.\u003cbr\u003e\n今回は、データや通信の暗号化技術について、少し見てみます。\u003c\/p\u003e",
     "inLanguage": "en",
     "isFamilyFriendly": "true",
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "http:\/\/www.techaas.net\/post\/vue-fabric\/"
+        "@id": "http:\/\/www.techaas.net\/post\/secure-communication\/"
     },
     "author" : [
     ],
     "copyrightHolder" : "TECHaas",
     "copyrightYear" : "2021",
-    "dateCreated": "2021-07-20T00:00:01.00Z",
-    "datePublished": "2021-07-20T00:00:01.00Z",
-    "dateModified": "2021-07-20T00:00:01.00Z",
+    "dateCreated": "2021-07-25T00:00:01.00Z",
+    "datePublished": "2021-07-25T00:00:01.00Z",
+    "dateModified": "2021-07-25T00:00:01.00Z",
     "publisher":{
         "@type":"Organization",
         "name": "TECHaas",
@@ -105,9 +105,9 @@ Vue.js に組み込んでみたので、その辺を。"/>
             "height":"32"
         }
     },
-    "url" : "http:\/\/www.techaas.net\/post\/vue-fabric\/",
-    "wordCount" : "698",
-    "genre" : [ "Web" , "Vue" ]
+    "url" : "http:\/\/www.techaas.net\/post\/secure-communication\/",
+    "wordCount" : "63",
+    "genre" : [ "Security" ]
 }
 </script>
 
@@ -234,305 +234,82 @@ if (!doNotTrack) {
             
             
 
-            <h1>Vue で Fabric.js</h1>
+            <h1>セキュアな通信</h1>
             
             <div class="gblog-post__meta">
                 <span class="no-wrap">
                     <svg class="icon gblog_date"><use xlink:href="#gblog_date"></use></svg>
                     <span class="gblog-post__tag">
-                        <time datetime="2021-07-20T00:00:01&#43;09:00">
+                        <time datetime="2021-07-25T00:00:01&#43;09:00">
                             
-                            Jul 20, 2021
+                            Jul 25, 2021
                         </time>
                     </span>
                 </span>
 
                 <span class="no-wrap">
                     <svg class="icon gblog_timer"><use xlink:href="#gblog_timer"></use></svg>
-                    <span class="gblog-post__tag">4 min read</span>
+                    <span class="gblog-post__tag">1 min read</span>
                 </span>
             </div>
             
         </header>
 
         <section class="gblog-markdown">
-            <p>HTML5 Canvas Library の <a class="gblog-markdown__link" href="http://fabricjs.com/">Fabric.js</a> を
-<a class="gblog-markdown__link" href="https://jp.vuejs.org/index.html">Vue.js</a> に組み込んでみたので、その辺を。</p>
+            <p>インターネットなどの公衆回線を通じてデータを交換する場合、避けて通れないのが暗号化です.<br>
+今回は、データや通信の暗号化技術について、少し見てみます。</p>
   <div class="gblog-toc gblog-toc__level--6"><nav id="TableOfContents"><ul>
-        <li><a href="#fabricjs-って">Fabric.js って</a></li>
-        <li><a href="#typescript-で-vuejs">typescript で Vue.js</a></li>
-        <li><a href="#キャンバス---fabriccanvas">キャンバス - fabric.Canvas</a></li>
-        <li><a href="#描画オブジェクト---fabricrect">描画オブジェクト - fabric.Rect</a></li>
-        <li><a href="#イベントハンドリング">イベントハンドリング</a></li>
+        <li><a href="#インターネットは公衆回線">インターネットは公衆回線</a></li>
+        <li><a href="#データの暗号化方式">データの暗号化方式</a></li>
       </ul></nav><hr></div>
 
 
 <div class="gblog-post__anchorwrap">
-    <h2 id="fabricjs-って">
-        Fabric.js って
-        <a data-clipboard-text="http://www.techaas.net/post/vue-fabric/#fabricjs-って" class="gblog-post__anchor gblog-post__anchor--right clip" aria-label="Anchor Fabric.js って" href="#fabricjs-%e3%81%a3%e3%81%a6">
+    <h2 id="インターネットは公衆回線">
+        インターネットは公衆回線
+        <a data-clipboard-text="http://www.techaas.net/post/secure-communication/#インターネットは公衆回線" class="gblog-post__anchor gblog-post__anchor--right clip" aria-label="Anchor インターネットは公衆回線" href="#%e3%82%a4%e3%83%b3%e3%82%bf%e3%83%bc%e3%83%8d%e3%83%83%e3%83%88%e3%81%af%e5%85%ac%e8%a1%86%e5%9b%9e%e7%b7%9a">
             <svg class="icon gblog_link"><use xlink:href="#gblog_link"></use></svg>
         </a>
     </h2>
-</div><p>Fabric.js は、HTML5 の Canvas を js で扱うためのライブラリです。</p>
-<p>2D 図形や描画したものをオブジェクトとして制御することができるようになります。
-また、普通の HTML要素じゃちょっと難しいかなレベルの細かい図形描画が可能です。</p>
-<p>どんなことができるのかは、 <a class="gblog-markdown__link" href="http://fabricjs.com/demos/">[Fabric.js のDemo]</a> ページあたりを見てください。</p>
-<p>Fabric.js の描画要素は javascript object になります。 土台になるキャンバスは、 <code>fabric.Canvas</code> で作成します。
-その上に、例えば四角を描きたかったら、 <code>fabric.Rect</code> を作成し、キャンバスに <code>add</code> すると、後は勝手に描画してくれます。</p>
-<p>Fabric.js の <a class="gblog-markdown__link" href="http://fabricjs.com/fabric-intro-part-1">[イントロダクション]</a> にあるサンプルコードだと、こんな感じです。</p>
-<pre><code>// create a wrapper around native canvas element (with id=&quot;c&quot;)
-var canvas = new fabric.Canvas('c');
-
-// create a rectangle object
-var rect = new fabric.Rect({
-  left: 100,
-  top: 100,
-  fill: 'red',
-  width: 20,
-  height: 20
-});
-
-// &quot;add&quot; rectangle onto canvas
-canvas.add(rect);
-</code></pre><p>ここでは、 <a class="gblog-markdown__link" href="http://fabricjs.com/controls">[オブジェクトの制御のデモ]</a> に似たようなことを Vue.js でやってみます。
+</div><p>インターネットは公衆回線です。 誰でもネットワークに接続できますし、通信する時の経路がどのようになっているのかは保証されていません。
+そこで安全にデータをやりとりしたり、交換したデータの正しさを保証するための方法が作られてきました。</p>
+<p>ネットワークのプロトコルレベルで、経路の暗号化として <code>TLS/SSL</code> や <code>HTTPS</code> が使われます。
+経路とはネットワークの入り口から出口までで HTTPS の場合は、ブラウザから WEB サーバまでです。</p>
+<p>SSL や HTTPS の脆弱性は置いておいても、暗号化されるのは経路上だけです。
+どういうことかというと、宅配便でなにかを送る時に箱に入れて送ることを想像してみてください。
+宅配便で運ばれている時には、その箱になにが入っているかはわかりません。
+経路の保護は宅配便と同じで、送付元から宛先までの間はきちんと箱に入れて送ることで、中の秘密を保護します。</p>
+<p>しかし、箱が誰かに横取りされたり (宛先で偽物が待ち構えてたり、実は宅配業者を語った悪者だったりとか)、
+届いた箱を開けた後 (サーバがクラックされたり) や、入れる前 (ブラウザにスパイウェアが仕込まれてたり) に盗み見したりすれば、中身がなにかバレてしまいます。</p>
+<p>本気で中身を秘密にする必要がある時には、守りたいものを金庫に入れて、それを宅配便で送ります。
+また、届いた後も必要になるまで金庫は開けないとかにすれば、もっとセキュアになります。
+要は、サイバーセキュリティ対策も実生活で経験することを応用すればいいのです。
+ただ、ソフトウェアでは金庫や鍵を複製することは実物よりもはるかに楽ですので、その辺のコストにより実装の考え方が異なります。
+(実社会では、鍵を複製するために、現物を手に入れてそれから型を作ってとか色々と手間がかかります。 IT の世界ではちょっとの隙を見つけて鍵のデータをコピーするだけです。しかも鍵の情報にアクセスされたこともわからないかもしれません。)
 <br /><br /></p>
 <div class="gblog-post__anchorwrap">
-    <h2 id="typescript-で-vuejs">
-        typescript で Vue.js
-        <a data-clipboard-text="http://www.techaas.net/post/vue-fabric/#typescript-で-vuejs" class="gblog-post__anchor gblog-post__anchor--right clip" aria-label="Anchor typescript で Vue.js" href="#typescript-%e3%81%a7-vuejs">
+    <h2 id="データの暗号化方式">
+        データの暗号化方式
+        <a data-clipboard-text="http://www.techaas.net/post/secure-communication/#データの暗号化方式" class="gblog-post__anchor gblog-post__anchor--right clip" aria-label="Anchor データの暗号化方式" href="#%e3%83%87%e3%83%bc%e3%82%bf%e3%81%ae%e6%9a%97%e5%8f%b7%e5%8c%96%e6%96%b9%e5%bc%8f">
             <svg class="icon gblog_link"><use xlink:href="#gblog_link"></use></svg>
         </a>
     </h2>
-</div><p>適当なプロジェクトを作成します。 今回は <code>typescript</code> にします。</p>
-<pre><code>$ vue create vue-fabric-test
-</code></pre><p><code>typescript</code> にするには、オプションを手動で設定していきます。</p>
-<img src="/img/SS_2021-07-20_13.12.11.png" style="border:1px solid black;"/>
-<p><code>Typescript</code> サポートを組み込みます。</p>
-<img src="/img/SS_2021-07-20_13.15.56.png" style="border:1px solid black;"/>
-<p>一点だけ。 <code>typescript</code> を Vue.js に組み込む時に、 <code>component</code> をクラスとして定義するか 、
-<code>object</code> として定義するかの２通りから選べます (Use class-style component syntaxの項目)。
-ここでは、 <code>object</code> として定義するので、 <code>No</code> にしてます。 それ以外はデフォルトです。</p>
-<img src="/img/SS_2021-07-20_13.16.41.png" style="border:1px solid black;"/>
-<p>出来上がったら、Fabric.js を組み込みます。</p>
-<pre><code>$ npm install fabric --save
-
-$ npm install @types/fabric --save-dev
-</code></pre><p><br /><br /></p>
-<div class="gblog-post__anchorwrap">
-    <h2 id="キャンバス---fabriccanvas">
-        キャンバス - fabric.Canvas
-        <a data-clipboard-text="http://www.techaas.net/post/vue-fabric/#キャンバス---fabriccanvas" class="gblog-post__anchor gblog-post__anchor--right clip" aria-label="Anchor キャンバス - fabric.Canvas" href="#%e3%82%ad%e3%83%a3%e3%83%b3%e3%83%90%e3%82%b9---fabriccanvas">
-            <svg class="icon gblog_link"><use xlink:href="#gblog_link"></use></svg>
-        </a>
-    </h2>
-</div><p>今回は、あまり複雑な描画はしないので、簡単に fabric のクラスを、Vue.js の component にマッピングすることで実現します。</p>
-<p>まず、描画の土台になるキャンバスの準備です。キャンバスは、 HTMLの <code>canvas</code> タグで定義します。</p>
-<pre><code>&lt;template&gt;
-  &lt;div&gt;
-    &lt;canvas id=&quot;base-canvas&quot; /&gt;
-  &lt;/div&gt;
-&lt;/template&gt;
-</code></pre><p><code>typescript</code> なので、変数等の型定義が必要になります。</p>
-<pre><code>&lt;script lang=&quot;ts&quot;&gt;
-import Vue from 'vue';
-import { fabric } from &quot;fabric&quot;;
-
-interface DataType {
-  canvas: fabric.Canvas | undefined;
-  background: string;
-}
-</code></pre><p>パラメータ類は、 <code>props</code> で渡します。</p>
-<pre><code>export default Vue.extend({
-  name: &quot;FabricCanvas&quot;,
-  props: {
-    width: Number,
-    height: Number,
-  },
-  data() : DataType {
-    return {
-      canvas: undefined,
-      background: 'lightgray',
-    };
-  },
-</code></pre><p>実行時 (mounted) になったら、 <code>fabric.Canvas</code> を作って、 <code>data</code> に保存しておきます。
-<code>fabric.Canvas</code> の最初の引数は、 HTML側の <code>canvas</code> タグの <code>id</code> です。 2番目は、オプションパラメータになります。</p>
-<pre><code>  mounted: function () {
-    this.$nextTick(function () {
-      const canvas = new fabric.Canvas(&quot;base-canvas&quot;, {
-        width: this.width,
-        height: this.height,
-        backgroundColor: this.background,
-      });
-      canvas.preserveObjectStacking = true;
-      canvas.stateful = true;
-
-      this.canvas = canvas;
-    });
-  },
-});
-&lt;/script&gt;
-</code></pre><p><code>canvas.preserveObjectStacking</code> で、キャンバスに追加したオブジェクトが選択されても、手前にこないようにしています。</p>
-<p><code>canvas.stateful</code> は、今回は使いませんがオブジェクトが、オブジェクトに対するイベントハンドリング時に、操作前の状態が記録されて渡されるようになります。</p>
-<p><code>FabricCanvas</code> の準備できたら、 <code>App.vue</code> を変更して、組み込みます。</p>
-<pre><code>&lt;template&gt;
-  &lt;div id=&quot;app&quot;&gt;
-    &lt;FabricCanvas :width=600 :height=400 /&gt;
-  &lt;/div&gt;
-&lt;/template&gt;
-
-&lt;script lang=&quot;ts&quot;&gt;
-import Vue from 'vue';
-import FabricCanvas from './components/FabricCanvas.vue';
-
-export default Vue.extend({
-  name: 'App',
-  components: {
-    FabricCanvas
-  }
-});
-&lt;/script&gt;
-</code></pre><p><code>lightgray</code> の背景色のキャンバスが描画されているはずです。
-<br /><br /></p>
-<div class="gblog-post__anchorwrap">
-    <h2 id="描画オブジェクト---fabricrect">
-        描画オブジェクト - fabric.Rect
-        <a data-clipboard-text="http://www.techaas.net/post/vue-fabric/#描画オブジェクト---fabricrect" class="gblog-post__anchor gblog-post__anchor--right clip" aria-label="Anchor 描画オブジェクト - fabric.Rect" href="#%e6%8f%8f%e7%94%bb%e3%82%aa%e3%83%96%e3%82%b8%e3%82%a7%e3%82%af%e3%83%88---fabricrect">
-            <svg class="icon gblog_link"><use xlink:href="#gblog_link"></use></svg>
-        </a>
-    </h2>
-</div><p>次にキャンバス上に四角を描画します。 四角は、 <code>fabric.Rect</code> です。
-<code>&lt;template&gt;</code> は空にします。 Canvas 上の描画については、全て fabric 側で行われます。</p>
-<pre><code>&lt;template&gt;
-&lt;div /&gt;
-&lt;/template&gt;
-
-&lt;script lang=&quot;ts&quot;&gt;
-import Vue, { PropType } from 'vue';
-import { fabric } from &quot;fabric&quot;;
-
-interface DataType {
-  rect: fabric.Rect | null;
-}
-
-export default Vue.extend({
-  name: &quot;FabricRect&quot;,
-  props: {
-    coord: Array as PropType&lt;number[]&gt;,
-    fillColor: String, 
-    canvas: Object as PropType&lt;fabric.Canvas&gt;,
-    handleCoordChange: Function as PropType&lt;(coord:number[]) =&gt; void&gt;,
-  },
-  data(): DataType {
-    return {
-      rect: null,
-    };
-  },
-  watch: {
-    // eslint-disable-next-line no-unused-vars
-    canvas: function (_val, _oldVal) {
-      const rect = new fabric.Rect({
-        left: this.coord[0],
-        top: this.coord[1],
-        width: this.coord[2],
-        height: this.coord[3],
-        fill: this.fillColor,
-      });
-      this.canvas.add(rect);
-      this.rect = rect;
-    },
-  },
-});
-&lt;/script&gt;
-</code></pre><p><code>FabricCanvas</code> 側を以下のように変更して、 <code>FabricRect</code> を追加します。</p>
-<pre><code>&lt;template&gt;
-  &lt;div&gt;
-    &lt;canvas id=&quot;base-canvas&quot;&gt;
-      &lt;FabricRect :coord=&quot;[100, 100, 200, 200]&quot; :canvas=&quot;canvas&quot; fillColor=&quot;red&quot;/&gt;
-    &lt;/canvas&gt;
-  &lt;/div&gt;
-&lt;/template&gt;
-</code></pre><p>FabricCanvas の <code>mounted</code> で <code>canvas</code> が生成されたら、 FabricRect の <code>props</code> に渡ってきます。
-FabricRect の <code>watch</code> で、 <code>canvas</code> を見ているので、そこで <code>fabric.Rect</code> が作成されることになります。
-生成された <code>fabric.Rect</code> はキャンバスに追加されることで描画されるという流れになります。</p>
-<p>できあがると、こんな画面になるはずです。キャンバス上に描画した四角をコントローラで制御するインタラクティンブな描画が簡単に実現できます。</p>
-<img src="/img/SS_2021-07-20_15.59.27.png" style="border:1px solid black;"/>
-<p>ソースコードは、 <a class="gblog-markdown__link" href="https://github.com/techaas/vue-fabric-test/tree/basic">[github の vue-fabric-test (basic) ]</a> に置いてあります。
-<br /><br /></p>
-<div class="gblog-post__anchorwrap">
-    <h2 id="イベントハンドリング">
-        イベントハンドリング
-        <a data-clipboard-text="http://www.techaas.net/post/vue-fabric/#イベントハンドリング" class="gblog-post__anchor gblog-post__anchor--right clip" aria-label="Anchor イベントハンドリング" href="#%e3%82%a4%e3%83%99%e3%83%b3%e3%83%88%e3%83%8f%e3%83%b3%e3%83%89%e3%83%aa%e3%83%b3%e3%82%b0">
-            <svg class="icon gblog_link"><use xlink:href="#gblog_link"></use></svg>
-        </a>
-    </h2>
-</div><p>基本的な描画はできるようになりました。 fabric では描画要素をユーザが操作することができます。
-(もちろん静的に描画するだけってのも可能です)</p>
-<p>今回の実装では、 fabric オブジェクトは Vue の値で作成するだけで、その後は両方の座標値などのプロパティは独立しています。
-きちんと実装するなら、 Vue のプロパティと fabric オブジェクトのプロパティを双方向バインディングすると良いのですが、ちょっと面倒です。</p>
-<p>そこで、簡易的に fabric のイベントハンドラーで Vue 側の値を書き換えるようにしてみます。</p>
-<p>最終的なソースコードは、<a class="gblog-markdown__link" href="https://github.com/techaas/vue-fabric-test/tree/develop">[vue-fabric-test (developブランチ) ]</a> にあります。</p>
-<p>fabric は、ユーザ操作後にイベントを発生しますので、ハンドラを定義して、Vue側のプロパティを書き換えるようにします。</p>
-<p><code>FabricRect</code> で fabric オブジェクトを生成した後にハンドラを登録します。</p>
-<pre><code>      rect.on('moved', () =&gt; {
-        const coord = [
-          Math.round(rect.left!),
-          Math.round(rect.top!),
-          Math.round(rect.width! * rect.scaleX!),
-          Math.round(rect.height! * rect.scaleY!),
-        ];
-        this.$emit('coord-change', coord, 'moved');
-      });
-      rect.on('scaled', () =&gt; {
-        const coord = [
-          Math.round(rect.left!),
-          Math.round(rect.top!),
-          Math.round(rect.width! * rect.scaleX!),
-          Math.round(rect.height! * rect.scaleY!),
-        ];
-        this.$emit('coord-change', coord, 'scaled');
-      });
-</code></pre><p><code>moved</code> / <code>scaled</code> は、それぞれオブジェクトの移動後、拡大縮小後におきます。　他にもイベントがありますので、きちんとやるなら
-そちらもハンドルした方が良いですが、今回は省略。　</p>
-<p>また、ハンドラの使い方として、 <code>moving</code> / <code>scaling</code> などでユーザの操作中にフックする等も可能です。
-一覧については、 <a class="gblog-markdown__link" href="http://fabricjs.com/events">[fabric のイベント]</a> あたりを参照。 <code>objects events</code> に分類されている
-ものがオブジェクトの操作時に起きます。</p>
-<p>ハンドラの中身を見ていきます。 fabric の座標値は浮動小数です。 Vue 側では整数値で処理しているので、 <code>Math.round</code> で四捨五入します。</p>
-<p><code>width</code> / <code>height</code> についてですが、 fabric では拡大縮小すると <code>scaleX</code> / <code>scaleY</code> の倍率が変更されるだけになります。
-実際の数値を掛け算で求めてから、四捨五入して Vue 側の値を算出します。</p>
-<p><code>$emit</code> でイベントとして送出します。</p>
-<p>この記事の最初の方では、座標値を数値の配列 (<code>numnber[]</code>)として扱っていましたが、 ここでは、<code>FabricRect</code> の座標値として、 <code>App.vue</code> に <code>interface</code> を定義しています。</p>
-<pre><code>export interface rectRecord {
-  x: number;
-  y: number;
-  w: number;
-  h: number;
-  fill: string;
-}
-
-interface DataType {
-  rects: rectRecord[];
-}
-</code></pre><p><code>App.vue</code> で <code>rects: rectRecord[]</code> を定義して、 <code>FabricCanvas</code> に渡します。 <code>FabricCanvas</code> では、 <code>FabricRect</code> を <code>v-for</code> で生成します。</p>
-<p>さて、 fabric 側で変更された値は、 <code>FabricRect</code> から <code>coord-change</code> と名前をつけて <code>$emit</code> したのは上で見ました。
-それを <code>FabricCanvas</code> で受けて、どの <code>FabricRect</code> から発報されたものか <code>index</code> を追加して、 <code>App</code> に流します。</p>
-<pre><code>&lt;template&gt;
-  ...
-        @coord-change=&quot;(coord, event) =&gt; $emit('coord-change', index, coord, event)&quot; /&gt;
-  ...
-&lt;template&gt;
-</code></pre><p><code>App.vue</code> では、それを受けて、 <code>handleCoordChange</code> メソッドを呼び出します。</p>
-<pre><code>&lt;template&gt;
-  ...
-      @coord-change=&quot;handleCoordChange&quot; /&gt;
-  ...
-&lt;template&gt;
-</code></pre><p>そこで、 <code>data</code> の内部値を書き換えるようになります。 これで fabric での値の変更を Vue 側に反映することができるようになります。</p>
-<img src="/img/SS_2021-07-21_11.33.58.png" width="600" style="border:1px solid black;"/>
-<p>このスクリーションショットでは、 chrome に <code>Vue.js devtools</code> を組み込んでいます。 <code>devtools</code> を使うと、 chrome の デベロッパーツールから、 Vue の内部プロパティ等をリアルタイムでデバッグできるようになります。 (ただ、開発サーバ上しか動作しません。)</p>
-<p>残りとして、Vue 側での値に reactive に fabric を合わせることで双方向バインディングできるようになりますが、そちらは省略します。
-ヒントとしては、 fabric オブジェクトに値を <code>set()</code> してから、 <code>setCoord()</code> を使うことで、オブジェクトを変更に合わせて描画させることができます。</p>
-<p>reactive なフレームワークを使う利点としては、 Single Source of Truth が実現しやすいことが挙げられるので、是非その辺挑戦してみてください。</p>
+</div><p>データを保護する暗号化の方法 (金庫の使い方) として、主に以下の２つの方法が使われています。</p>
+<ul>
+<li>共通鍵暗号 - 暗号と復号で同じ鍵</li>
+<li>公開鍵暗号 - 暗号と複合は違う鍵</li>
+</ul>
+<p>共通鍵暗号は、1つの金庫の同じ鍵を、送り手と受け手の両方が持っているのと同じです。
+それに対して公開鍵暗号は、受け手が持っている鍵で開けられる金庫をみんなに配るようなものです。(厳密には違いますが、概念としてはそんな感じ)</p>
+<p>共通鍵暗号は、同じ鍵を使う必要があるため、からず鍵の受け渡しが必要です。
+知り合い同士のデータ交換ならあまり問題になりませんが (鍵を直接会って交換するとか、ネットワークを経由しない方法を使う)、不特定多数とデータを交換する必要がある場合、鍵交換時の安全を担保する方法が問題になります。</p>
+<p>公開鍵暗号は、公開鍵と秘密鍵の２つの鍵を用意します。 この鍵は、公開鍵で暗号化したデータは、対応する秘密鍵でないと復号できないという特性があります。
+ただし、公開鍵暗号は、共通鍵暗号と比べて、データの暗号、復号に時間がかかります。</p>
+<p>そこで、データを交換する際によく使われるのが、一時的な鍵を生成して、共通鍵暗号でデータの暗号化します。
+次に受け手の公開鍵を使って、その鍵だけを暗号化します。　暗号化された実データと鍵データを受け手に送ります。</p>
+<p>受け手側は、秘密鍵を使って鍵データの復号をして、その鍵で実データを復号します。
+そうすることで、鍵交換時の問題を解決しつつ、遅くならない方法でデータ交換が可能になります。
+途中で誰かにデータを盗まれたとしても、秘密鍵がないと鍵データは復号ができませんので、結果として実データもできます。</p>
 
         </section>
     </article>
