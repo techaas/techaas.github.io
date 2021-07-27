@@ -1,71 +1,8 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Post on TECHaas</title>
-    <link>http://www.techaas.net/post/</link>
-    <description>Recent content in Post on TECHaas</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>ja</language>
-    <lastBuildDate>Mon, 26 Jul 2021 00:00:01 +0900</lastBuildDate><atom:link href="http://www.techaas.net/post/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>セキュアなデータ交換</title>
-      <link>http://www.techaas.net/post/secure-communication/</link>
-      <pubDate>Mon, 26 Jul 2021 00:00:01 +0900</pubDate>
-      
-      <guid>http://www.techaas.net/post/secure-communication/</guid>
-      <description>&lt;p&gt;インターネットなどの公衆回線を通じてデータを交換する場合、避けて通れないのが暗号化です.&lt;br&gt;
-今回は、データの暗号化技術について、少し見てみます。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Vue で Fabric.js</title>
-      <link>http://www.techaas.net/post/vue-fabric/</link>
-      <pubDate>Tue, 20 Jul 2021 00:00:01 +0900</pubDate>
-      
-      <guid>http://www.techaas.net/post/vue-fabric/</guid>
-      <description>&lt;p&gt;HTML5 Canvas Library の &lt;a class=&#34;gblog-markdown__link&#34; href=&#34;http://fabricjs.com/&#34;&gt;Fabric.js&lt;/a&gt; を
-&lt;a class=&#34;gblog-markdown__link&#34; href=&#34;https://jp.vuejs.org/index.html&#34;&gt;Vue.js&lt;/a&gt; に組み込んでみたので、その辺を。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Firebase Authentication - その3</title>
-      <link>http://www.techaas.net/post/firebase-server/</link>
-      <pubDate>Fri, 16 Jul 2021 00:00:01 +0900</pubDate>
-      
-      <guid>http://www.techaas.net/post/firebase-server/</guid>
-      <description>&lt;p&gt;「Firebase のユーザー認証システムで、WEBクライアント認証を実装してみます」 の続きです.&lt;br&gt;
-今回は、サーバ側で認証済のクライアントか確認してみるです。&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Firebase Authentication - その2</title>
-      <link>http://www.techaas.net/post/firebase-signup/</link>
-      <pubDate>Thu, 15 Jul 2021 00:00:01 +0900</pubDate>
-      
-      <guid>http://www.techaas.net/post/firebase-signup/</guid>
-      <description>&lt;p&gt;「Firebase のユーザー認証システムで、WEBクライアント認証を実装してみます」 の続きです.&lt;br&gt;
-今回はユーザ登録と、認証画面を追加して、ログイン・ログアウトを試してみます.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Firebase Authentication - その1</title>
-      <link>http://www.techaas.net/post/firebase-auth/</link>
-      <pubDate>Wed, 14 Jul 2021 00:00:01 +0900</pubDate>
-      
-      <guid>http://www.techaas.net/post/firebase-auth/</guid>
-      <description>&lt;p&gt;&lt;a class=&#34;gblog-markdown__link&#34; href=&#34;https://firebase.google.com/&#34;&gt;Firebase&lt;/a&gt; のユーザー認証システムで、WEBクライアント認証を実装してみます.&lt;br&gt;
-最初は &lt;a class=&#34;gblog-markdown__link&#34; href=&#34;https://jp.vuejs.org/index.html&#34;&gt;Vue.js&lt;/a&gt; での Firebase への接続からです.&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Video Player</title>
-      <link>http://www.techaas.net/post/video-player/</link>
-      <pubDate>Mon, 01 Mar 2021 00:00:00 +0900</pubDate>
-      
-      <guid>http://www.techaas.net/post/video-player/</guid>
-      <description>&lt;p&gt;Android / iOS の両方でビデオ再生するサンプルです.&lt;br&gt;
-一番簡単に AV 再生コードを書くとこんな感じになる例です.&lt;/p&gt;</description>
-    </item>
-    
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Post on TECHaas</title><link>http://www.techaas.net/post/</link><description>Recent content in Post on TECHaas</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Mon, 26 Jul 2021 00:00:01 +0900</lastBuildDate><atom:link href="http://www.techaas.net/post/index.xml" rel="self" type="application/rss+xml"/><item><title>暗号化でセキュアなデータ交換</title><link>http://www.techaas.net/post/secure-communication/</link><pubDate>Mon, 26 Jul 2021 00:00:01 +0900</pubDate><guid>http://www.techaas.net/post/secure-communication/</guid><description>&lt;p>インターネットなどの公衆回線を通じてデータを交換する場合、避けて通れないのが暗号化です.&lt;br>
+共通鍵 / 公開鍵暗号の AES / RSA あたりについて、実装はどんな感じか見てみます.&lt;/p></description></item><item><title>Vue で Fabric.js</title><link>http://www.techaas.net/post/vue-fabric/</link><pubDate>Tue, 20 Jul 2021 00:00:01 +0900</pubDate><guid>http://www.techaas.net/post/vue-fabric/</guid><description>&lt;p>HTML5 Canvas Library である &lt;a class="gblog-markdown__link" href="http://fabricjs.com/">Fabric.js&lt;/a> を
+&lt;a class="gblog-markdown__link" href="https://jp.vuejs.org/index.html">Vue.js&lt;/a> に組み込んでみたので、その辺を.&lt;br>
+Web クライアントで 2D 描画をする方法の一つです.&lt;/p></description></item><item><title>Firebase Authentication - その3</title><link>http://www.techaas.net/post/firebase-server/</link><pubDate>Fri, 16 Jul 2021 00:00:01 +0900</pubDate><guid>http://www.techaas.net/post/firebase-server/</guid><description>&lt;p>「Firebase のユーザー認証システムで、Web クライアント認証を実装してみます」 の続きです.&lt;br>
+今回は、サーバ側で認証済のクライアントか確かめるため JWT の確認をしてみるです.&lt;/p></description></item><item><title>Firebase Authentication - その2</title><link>http://www.techaas.net/post/firebase-signup/</link><pubDate>Thu, 15 Jul 2021 00:00:01 +0900</pubDate><guid>http://www.techaas.net/post/firebase-signup/</guid><description>&lt;p>「Firebase のユーザー認証システムで、Web クライアント認証を実装してみます」 の続きです.&lt;br>
+今回はユーザ登録と、認証画面を追加して、ログイン・ログアウトを試してみます.&lt;/p></description></item><item><title>Firebase Authentication - その1</title><link>http://www.techaas.net/post/firebase-auth/</link><pubDate>Wed, 14 Jul 2021 00:00:01 +0900</pubDate><guid>http://www.techaas.net/post/firebase-auth/</guid><description>&lt;p>&lt;a class="gblog-markdown__link" href="https://firebase.google.com/">Firebase&lt;/a> のユーザー認証システムで、Web クライアント認証を実装してみます.&lt;br>
+最初は &lt;a class="gblog-markdown__link" href="https://jp.vuejs.org/index.html">Vue.js&lt;/a> での Firebase への接続からです.&lt;/p></description></item><item><title>Video Player</title><link>http://www.techaas.net/post/video-player/</link><pubDate>Mon, 01 Mar 2021 00:00:00 +0900</pubDate><guid>http://www.techaas.net/post/video-player/</guid><description>&lt;p>Android (kotlin) / iOS (Swift) のそれぞれで、ビデオ再生するアプリのサンプルです.&lt;br>
+一番簡単にビデオ再生コードを書くとこんな感じになるよって例です.&lt;/p></description></item></channel></rss>

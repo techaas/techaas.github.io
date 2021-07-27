@@ -1,21 +1,2 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Mobile on TECHaas</title>
-    <link>http://www.techaas.net/tags/Mobile/</link>
-    <description>Recent content in Mobile on TECHaas</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>ja</language>
-    <lastBuildDate>Mon, 01 Mar 2021 00:00:00 +0900</lastBuildDate><atom:link href="http://www.techaas.net/tags/Mobile/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Video Player</title>
-      <link>http://www.techaas.net/post/video-player/</link>
-      <pubDate>Mon, 01 Mar 2021 00:00:00 +0900</pubDate>
-      
-      <guid>http://www.techaas.net/post/video-player/</guid>
-      <description>&lt;p&gt;Android / iOS の両方でビデオ再生するサンプルです.&lt;br&gt;
-一番簡単に AV 再生コードを書くとこんな感じになる例です.&lt;/p&gt;</description>
-    </item>
-    
-  </channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Mobile on TECHaas</title><link>http://www.techaas.net/tags/Mobile/</link><description>Recent content in Mobile on TECHaas</description><generator>Hugo -- gohugo.io</generator><language>ja</language><lastBuildDate>Mon, 01 Mar 2021 00:00:00 +0900</lastBuildDate><atom:link href="http://www.techaas.net/tags/Mobile/index.xml" rel="self" type="application/rss+xml"/><item><title>Video Player</title><link>http://www.techaas.net/post/video-player/</link><pubDate>Mon, 01 Mar 2021 00:00:00 +0900</pubDate><guid>http://www.techaas.net/post/video-player/</guid><description>&lt;p>Android (kotlin) / iOS (Swift) のそれぞれで、ビデオ再生するアプリのサンプルです.&lt;br>
+一番簡単にビデオ再生コードを書くとこんな感じになるよって例です.&lt;/p></description></item></channel></rss>
