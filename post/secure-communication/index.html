@@ -11,7 +11,7 @@
 
 
     <meta name="description" content="インターネットなどの公衆回線を通じてデータを交換する場合、避けて通れないのが暗号化です.
-今回は、データや通信の暗号化技術について、少し見てみます。">
+今回は、データの暗号化技術について、少し見てみます。">
 
 
 
@@ -23,7 +23,7 @@
     
 
 
-    <title>セキュアな通信 | TECHaas</title>
+    <title>セキュアなデータ交換 | TECHaas</title>
 
     <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
@@ -31,19 +31,19 @@
 
     
 
-    <meta property="og:title" content="セキュアな通信" />
+    <meta property="og:title" content="セキュアなデータ交換" />
 <meta property="og:description" content="インターネットなどの公衆回線を通じてデータを交換する場合、避けて通れないのが暗号化です.
-今回は、データや通信の暗号化技術について、少し見てみます。" />
+今回は、データの暗号化技術について、少し見てみます。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://www.techaas.net/post/secure-communication/" /><meta property="article:section" content="post" />
-<meta property="article:published_time" content="2021-07-25T00:00:01+09:00" />
-<meta property="article:modified_time" content="2021-07-25T00:00:01+09:00" />
+<meta property="article:published_time" content="2021-07-26T00:00:01+09:00" />
+<meta property="article:modified_time" content="2021-07-26T00:00:01+09:00" />
 
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="セキュアな通信"/>
+<meta name="twitter:title" content="セキュアなデータ交換"/>
 <meta name="twitter:description" content="インターネットなどの公衆回線を通じてデータを交換する場合、避けて通れないのが暗号化です.
-今回は、データや通信の暗号化技術について、少し見てみます。"/>
+今回は、データの暗号化技術について、少し見てみます。"/>
 
 
     <link rel="preload" as="font" href="/fonts/Metropolis.woff2" type="font/woff2" crossorigin="anonymous">
@@ -77,10 +77,10 @@
     "@context": "http://schema.org",
     "@type": "BlogPosting",
     "articleSection": "post",
-    "name": "セキュアな通信",
-    "headline": "セキュアな通信",
+    "name": "セキュアなデータ交換",
+    "headline": "セキュアなデータ交換",
     "alternativeHeadline": "",
-    "description": "\u003cp\u003eインターネットなどの公衆回線を通じてデータを交換する場合、避けて通れないのが暗号化です.\u003cbr\u003e\n今回は、データや通信の暗号化技術について、少し見てみます。\u003c\/p\u003e",
+    "description": "\u003cp\u003eインターネットなどの公衆回線を通じてデータを交換する場合、避けて通れないのが暗号化です.\u003cbr\u003e\n今回は、データの暗号化技術について、少し見てみます。\u003c\/p\u003e",
     "inLanguage": "en",
     "isFamilyFriendly": "true",
     "mainEntityOfPage": {
@@ -91,9 +91,9 @@
     ],
     "copyrightHolder" : "TECHaas",
     "copyrightYear" : "2021",
-    "dateCreated": "2021-07-25T00:00:01.00Z",
-    "datePublished": "2021-07-25T00:00:01.00Z",
-    "dateModified": "2021-07-25T00:00:01.00Z",
+    "dateCreated": "2021-07-26T00:00:01.00Z",
+    "datePublished": "2021-07-26T00:00:01.00Z",
+    "dateModified": "2021-07-26T00:00:01.00Z",
     "publisher":{
         "@type":"Organization",
         "name": "TECHaas",
@@ -106,8 +106,8 @@
         }
     },
     "url" : "http:\/\/www.techaas.net\/post\/secure-communication\/",
-    "wordCount" : "63",
-    "genre" : [ "Security" ]
+    "wordCount" : "536",
+    "genre" : [ "Security" , "Python" ]
 }
 </script>
 
@@ -176,6 +176,12 @@ if (!doNotTrack) {
         
         
         <li>
+            <a class="gblog-nav__entry " href="/tags/Python/">Python</a>
+        </li>
+        
+        
+        
+        <li>
             <a class="gblog-nav__entry " href="/tags/Security/">Security</a>
         </li>
         
@@ -234,22 +240,22 @@ if (!doNotTrack) {
             
             
 
-            <h1>セキュアな通信</h1>
+            <h1>セキュアなデータ交換</h1>
             
             <div class="gblog-post__meta">
                 <span class="no-wrap">
                     <svg class="icon gblog_date"><use xlink:href="#gblog_date"></use></svg>
                     <span class="gblog-post__tag">
-                        <time datetime="2021-07-25T00:00:01&#43;09:00">
+                        <time datetime="2021-07-26T00:00:01&#43;09:00">
                             
-                            Jul 25, 2021
+                            Jul 26, 2021
                         </time>
                     </span>
                 </span>
 
                 <span class="no-wrap">
                     <svg class="icon gblog_timer"><use xlink:href="#gblog_timer"></use></svg>
-                    <span class="gblog-post__tag">1 min read</span>
+                    <span class="gblog-post__tag">3 min read</span>
                 </span>
             </div>
             
@@ -257,10 +263,27 @@ if (!doNotTrack) {
 
         <section class="gblog-markdown">
             <p>インターネットなどの公衆回線を通じてデータを交換する場合、避けて通れないのが暗号化です.<br>
-今回は、データや通信の暗号化技術について、少し見てみます。</p>
+今回は、データの暗号化技術について、少し見てみます。</p>
   <div class="gblog-toc gblog-toc__level--6"><nav id="TableOfContents"><ul>
         <li><a href="#インターネットは公衆回線">インターネットは公衆回線</a></li>
         <li><a href="#データの暗号化方式">データの暗号化方式</a></li>
+        <li><a href="#データ交換の実装">データ交換の実装</a></li>
+        <li><a href="#openssl-による-rsa-鍵の作成">openssl による RSA 鍵の作成</a></li>
+        <li><a href="#データと鍵の暗号化の実装">データと鍵の暗号化の実装</a>
+          <ul>
+            <li><a href="#aes-の共通鍵を準備">AES の共通鍵を準備</a></li>
+            <li><a href="#aes-でデータを暗号化">AES でデータを暗号化</a></li>
+            <li><a href="#aes-鍵データを-rsa-暗号化">AES 鍵データを RSA 暗号化</a></li>
+          </ul>
+        </li>
+        <li><a href="#受け手側でのデータ復号の実装">受け手側でのデータ復号の実装</a>
+          <ul>
+            <li><a href="#鍵データの復号">鍵データの復号</a></li>
+            <li><a href="#aes復号の準備">AES復号の準備</a></li>
+            <li><a href="#aesの復号実行">AESの復号実行</a></li>
+          </ul>
+        </li>
+        <li><a href="#まとめ">まとめ</a></li>
       </ul></nav><hr></div>
 
 
@@ -277,15 +300,15 @@ if (!doNotTrack) {
 経路とはネットワークの入り口から出口までで HTTPS の場合は、ブラウザから WEB サーバまでです。</p>
 <p>SSL や HTTPS の脆弱性は置いておいても、暗号化されるのは経路上だけです。
 どういうことかというと、宅配便でなにかを送る時に箱に入れて送ることを想像してみてください。
-宅配便で運ばれている時には、その箱になにが入っているかはわかりません。
-経路の保護は宅配便と同じで、送付元から宛先までの間はきちんと箱に入れて送ることで、中の秘密を保護します。</p>
+宅配便で運ばれている時には、その箱になにが入っているか、他の人にはわかりません。
+経路の保護は宅配便と同じで、送付元から宛先までの間は封をした箱に入れて送ることで、中身の秘密を保護しています。</p>
 <p>しかし、箱が誰かに横取りされたり (宛先で偽物が待ち構えてたり、実は宅配業者を語った悪者だったりとか)、
-届いた箱を開けた後 (サーバがクラックされたり) や、入れる前 (ブラウザにスパイウェアが仕込まれてたり) に盗み見したりすれば、中身がなにかバレてしまいます。</p>
-<p>本気で中身を秘密にする必要がある時には、守りたいものを金庫に入れて、それを宅配便で送ります。
-また、届いた後も必要になるまで金庫は開けないとかにすれば、もっとセキュアになります。
-要は、サイバーセキュリティ対策も実生活で経験することを応用すればいいのです。
-ただ、ソフトウェアでは金庫や鍵を複製することは実物よりもはるかに楽ですので、その辺のコストにより実装の考え方が異なります。
-(実社会では、鍵を複製するために、現物を手に入れてそれから型を作ってとか色々と手間がかかります。 IT の世界ではちょっとの隙を見つけて鍵のデータをコピーするだけです。しかも鍵の情報にアクセスされたこともわからないかもしれません。)
+届いた箱を受け取った後 (サーバがクラックされたり) や、送る前 (ブラウザにスパイウェアが仕込まれてたり) に盗み見したりすれば、中身がなにかバレることになります。</p>
+<p>本気で中身を秘密にする必要がある時には、守りたいものを金庫に入れて、それを宅配便で送れば良いでしょう。
+また、届いた後も必要になるまで金庫を開けないことにすれば、もっとセキュアになります。
+要は、サイバーセキュリティ対策も実生活で経験していることを応用すればいいのです。
+ただし、ソフトウェアでは金庫や鍵を複製することは実物よりもはるかに楽なので、その辺のコストにより実装の考え方が異なります。
+(実社会では、鍵を複製するために、現物を手に入れてそれから型を作ってとか色々と手間がかかります。 IT の世界ではちょっとの隙を見つけて鍵のデータをコピーするだけです。しかも鍵の情報にアクセスしたこともわからないようにできるかもしれません)
 <br /><br /></p>
 <div class="gblog-post__anchorwrap">
     <h2 id="データの暗号化方式">
@@ -303,13 +326,247 @@ if (!doNotTrack) {
 それに対して公開鍵暗号は、受け手が持っている鍵で開けられる金庫をみんなに配るようなものです。(厳密には違いますが、概念としてはそんな感じ)</p>
 <p>共通鍵暗号は、同じ鍵を使う必要があるため、からず鍵の受け渡しが必要です。
 知り合い同士のデータ交換ならあまり問題になりませんが (鍵を直接会って交換するとか、ネットワークを経由しない方法を使う)、不特定多数とデータを交換する必要がある場合、鍵交換時の安全を担保する方法が問題になります。</p>
-<p>公開鍵暗号は、公開鍵と秘密鍵の２つの鍵を用意します。 この鍵は、公開鍵で暗号化したデータは、対応する秘密鍵でないと復号できないという特性があります。
-ただし、公開鍵暗号は、共通鍵暗号と比べて、データの暗号、復号に時間がかかります。</p>
-<p>そこで、データを交換する際によく使われるのが、一時的な鍵を生成して、共通鍵暗号でデータの暗号化します。
-次に受け手の公開鍵を使って、その鍵だけを暗号化します。　暗号化された実データと鍵データを受け手に送ります。</p>
+<p>公開鍵暗号は、公開鍵と秘密鍵の２つの鍵を用意します。 鍵には、公開鍵で暗号化したデータは、対応する秘密鍵でないと復号できないという特性があります。
+ただし、公開鍵暗号は、共通鍵暗号と比べて、データの暗号、復号に時間がかかります。
+それは、大きなデータを受け渡したり、多くのユーザをサポートするシステムでは課題になります。</p>
+<p>そこで、データを交換する際に使われる方法として、一時的な鍵を生成した共通鍵暗号でデータの暗号化します。
+次に受け手の公開鍵を使って、その鍵だけを暗号化します。
+暗号化された実データと鍵データを受け手に送ります。</p>
 <p>受け手側は、秘密鍵を使って鍵データの復号をして、その鍵で実データを復号します。
 そうすることで、鍵交換時の問題を解決しつつ、遅くならない方法でデータ交換が可能になります。
-途中で誰かにデータを盗まれたとしても、秘密鍵がないと鍵データは復号ができませんので、結果として実データもできます。</p>
+また、途中で誰かにデータを盗まれたとしても、秘密鍵がないと鍵データは復号ができませんので、結果として実データも保護できます。
+<br /><br /></p>
+<div class="gblog-post__anchorwrap">
+    <h2 id="データ交換の実装">
+        データ交換の実装
+        <a data-clipboard-text="http://www.techaas.net/post/secure-communication/#データ交換の実装" class="gblog-post__anchor gblog-post__anchor--right clip" aria-label="Anchor データ交換の実装" href="#%e3%83%87%e3%83%bc%e3%82%bf%e4%ba%a4%e6%8f%9b%e3%81%ae%e5%ae%9f%e8%a3%85">
+            <svg class="icon gblog_link"><use xlink:href="#gblog_link"></use></svg>
+        </a>
+    </h2>
+</div><p>セキュアなデータ交換の実装を試してみたいと思います。
+想定は、秘密鍵を持った人に、セキュアにデータを送付するシステムです。
+データをセキュアに保存するとかにも応用できると思います。</p>
+<p>概要としては、送り側で共通鍵暗号の <code>AES</code> で実データを暗号化します。
+その鍵データを公開鍵暗号方式の <code>RSA</code> で暗号化し、送付します。</p>
+<p>受け側では、鍵データを <code>RSA</code> の秘密鍵で復号し、その鍵を使って <code>AES</code> で実データを復号する流れになります。</p>
+<p>どのような暗号化方式を組み合わせるのが良いのか等は、システムの想定によって変わるかと思います。
+<br /><br /></p>
+<div class="gblog-post__anchorwrap">
+    <h2 id="openssl-による-rsa-鍵の作成">
+        openssl による RSA 鍵の作成
+        <a data-clipboard-text="http://www.techaas.net/post/secure-communication/#openssl-による-rsa-鍵の作成" class="gblog-post__anchor gblog-post__anchor--right clip" aria-label="Anchor openssl による RSA 鍵の作成" href="#openssl-%e3%81%ab%e3%82%88%e3%82%8b-rsa-%e9%8d%b5%e3%81%ae%e4%bd%9c%e6%88%90">
+            <svg class="icon gblog_link"><use xlink:href="#gblog_link"></use></svg>
+        </a>
+    </h2>
+</div><p>公開鍵暗号の RSA の鍵データは、今回は <code>openssl</code> コマンドで生成します。</p>
+<pre><code> openssl genrsa 2048 &gt; rsa_private.pem
+</code></pre><p><code>genrsa</code> コマンドは RSA の鍵生成で、 <code>2048</code> bitの長さの鍵を生成します。
+鍵の長さをどうするかは常に課題になります。短すぎればセキュリティが懸念されるでしょうし、長すぎると計算の時間、交換するデータの長さに影響がでます。</p>
+<p>結果を <code>rsa_private.pem</code> というファイルに保存します。
+正しく作成されているかの確認は、次のコマンドで確認できます。</p>
+<pre><code>openssl rsa -text &lt; rsa_private.pem 
+</code></pre><p>秘密鍵なのに、中身が読めちゃって良いのかってのがあるかと思います。
+秘密鍵の名前の通り、鍵そのものをきちんと秘匿しておかないと、そこがセキュリティ上のリスクになります。
+今回は、暗号化周りの実装をテストすることが目的なので、その辺は無視していますので注意してください。</p>
+<p>次に、秘密鍵から対となる公開鍵を生成します。</p>
+<pre><code>openssl rsa -pubout &lt; rsa_private.pem &gt; public.key
+</code></pre><p>こちらも中身を確認できます。</p>
+<pre><code>openssl rsa -text -pubin &lt; public.key
+</code></pre><p>秘密鍵と公開鍵の <code>Modulus</code> と <code>Exponent</code> の値は同じになっているはずです。</p>
+<p>ちなみにですが、 <code>RSA暗号</code> というのは、2つの大きな素数 <code>p</code> と <code>q</code> の積 <code>n</code> が分かっても、元の素数 <code>p</code> と <code>q</code> を計算するにはすごく時間がかかるってのが安全性の根拠です。
+公開鍵の <code>Modulus</code> というのが、 <code>n</code> に当たります。 <code>n</code> を公開してしまっても、元の <code>p</code> と <code>q</code> は求められないってことですね。
+<code>n</code> を使ってゴニョゴニョしたものは、 <code>p</code> と <code>q</code> を知ってれば元に戻せますよってのが、 <code>RSA暗号</code> です。
+(<code>n</code> は金庫で、<code>p</code> と <code>q</code> が鍵ってことになります)
+<br /><br /></p>
+<div class="gblog-post__anchorwrap">
+    <h2 id="データと鍵の暗号化の実装">
+        データと鍵の暗号化の実装
+        <a data-clipboard-text="http://www.techaas.net/post/secure-communication/#データと鍵の暗号化の実装" class="gblog-post__anchor gblog-post__anchor--right clip" aria-label="Anchor データと鍵の暗号化の実装" href="#%e3%83%87%e3%83%bc%e3%82%bf%e3%81%a8%e9%8d%b5%e3%81%ae%e6%9a%97%e5%8f%b7%e5%8c%96%e3%81%ae%e5%ae%9f%e8%a3%85">
+            <svg class="icon gblog_link"><use xlink:href="#gblog_link"></use></svg>
+        </a>
+    </h2>
+</div><p>今回は、<code>Python</code> で実装してみます。
+完全なソースコードは、 <a class="gblog-markdown__link" href="https://github.com/techaas/secure_data">github - secure_data</a> に置いてあります。</p>
+<p>送り側の実装は、 <code>sender_encrypt.py</code> です。</p>
+<p>import とか宣言は飛ばして、キモになるところだけ説明します。</p>
+<p>元データ <code>(test_data.jpg)</code> を読み込みます。</p>
+<pre><code>with open ('test_data.jpg', 'rb') as f:
+    data = f.read()
+
+m = hashlib.sha256()
+m.update(data)
+print(m.hexdigest())
+</code></pre><p><code>hashlib.sha256</code> は、 <code>SHA-256</code> ハッシュ関数で、ある特定のアルゴリズムで、与えられたデータの
+256bit のハッシュ値を計算します。
+(ハッシュなに？　とかはそのうち)</p>
+<p>読み込んだデータのハッシュ値を出力します。</p>
+<pre><code>b6ee0d4f499cd26f44fcc916d91e4ca2ff78c5d17d93b46d2ff6f94aae4b0b1e
+</code></pre><div class="gblog-post__anchorwrap">
+    <h3 id="aes-の共通鍵を準備">
+        AES の共通鍵を準備
+        <a data-clipboard-text="http://www.techaas.net/post/secure-communication/#aes-の共通鍵を準備" class="gblog-post__anchor gblog-post__anchor--right clip" aria-label="Anchor AES の共通鍵を準備" href="#aes-%e3%81%ae%e5%85%b1%e9%80%9a%e9%8d%b5%e3%82%92%e6%ba%96%e5%82%99">
+            <svg class="icon gblog_link"><use xlink:href="#gblog_link"></use></svg>
+        </a>
+    </h3>
+</div><p>次に AES の鍵データを生成します。</p>
+<p>暗号化する元データに現在時刻を付加しておきます。これは実行毎に結果がランダムになるようにするためです。</p>
+<pre><code>ct = datetime.datetime.now()
+print(ct)
+cti = int(ct.timestamp() * 1000 * 1000)
+print(cti)
+time_val = cti.to_bytes(8, 'big')
+
+data = f_ver + time_val + data
+m = hashlib.sha256()
+m.update(data)
+</code></pre><p>データのハッシュ値は、 <code>m.digtest()</code> でアクセスできますので、これを AES の鍵データとして使います。</p>
+<div class="gblog-post__anchorwrap">
+    <h3 id="aes-でデータを暗号化">
+        AES でデータを暗号化
+        <a data-clipboard-text="http://www.techaas.net/post/secure-communication/#aes-でデータを暗号化" class="gblog-post__anchor gblog-post__anchor--right clip" aria-label="Anchor AES でデータを暗号化" href="#aes-%e3%81%a7%e3%83%87%e3%83%bc%e3%82%bf%e3%82%92%e6%9a%97%e5%8f%b7%e5%8c%96">
+            <svg class="icon gblog_link"><use xlink:href="#gblog_link"></use></svg>
+        </a>
+    </h3>
+</div><p>できあがった鍵を使って元データを AES 暗号化します。
+まずは暗号器の準備です。</p>
+<pre><code>cipher = AES.new(m.digest(), AES.MODE_CBC)
+</code></pre><p><code>AES.MODE_CBC</code> は、AES 暗号時のオプションで、 <code>Cipher Block Chainging</code> モードになります。
+暗号時に直前ブロックの暗号化済データと XOR されます。
+そうすることで、暗号化をする時に、前後の関係性によって暗号が強化されます。
+(前のブロックに依存するようになるので、暗号化済データが先頭から全て揃わないと復号できなくなるって感じです)</p>
+<p>鍵データと元データの準備ができたので、 <code>encrypt</code> で暗号化します。</p>
+<pre><code>ct_bytes = cipher.encrypt(pad(data, AES.block_size))
+</code></pre><p>AESは固定長のブロック暗号です。
+<code>pad()</code> で半端な長さのブロックを補完してあげます。</p>
+<p>暗号化されたデータは、 <code>ct_bytes</code> に格納されていますので、データを書き出します。</p>
+<pre><code>with open ('crypto_data.jpg', 'wb') as f:
+    f.write(ct_bytes)
+</code></pre><div class="gblog-post__anchorwrap">
+    <h3 id="aes-鍵データを-rsa-暗号化">
+        AES 鍵データを RSA 暗号化
+        <a data-clipboard-text="http://www.techaas.net/post/secure-communication/#aes-鍵データを-rsa-暗号化" class="gblog-post__anchor gblog-post__anchor--right clip" aria-label="Anchor AES 鍵データを RSA 暗号化" href="#aes-%e9%8d%b5%e3%83%87%e3%83%bc%e3%82%bf%e3%82%92-rsa-%e6%9a%97%e5%8f%b7%e5%8c%96">
+            <svg class="icon gblog_link"><use xlink:href="#gblog_link"></use></svg>
+        </a>
+    </h3>
+</div><p>最後に、AES暗号で使用した共通鍵データを、RSA公開鍵で暗号化します。</p>
+<p>鍵データと、IV (Initial Vector) と呼ばれる AES で使用する初期設定値を
+base64 でエンコードします。</p>
+<pre><code>key = urlsafe_b64encode(m.digest()).decode('utf-8')
+print(key)
+iv = urlsafe_b64encode(cipher.iv).decode('utf-8')
+print(iv)
+message = json.dumps({'k':key,'v':iv})
+</code></pre><p>出来上がったものを、RSAで暗号化します。</p>
+<pre><code>with open('public.pem', 'br') as f:
+    public_pem = f.read()
+    public_key = RSA.import_key(public_pem)
+
+public_cipher = PKCS1_OAEP.new(public_key)
+ciphertext = public_cipher.encrypt(message.encode())
+</code></pre><p>暗号化された鍵データを <code>data.txt</code> に書き出して終わりです。</p>
+<pre><code>with open ('data.txt', 'wb') as f:
+    f.write(urlsafe_b64encode(ciphertext))
+</code></pre><p>本来ここで、暗号化された実データ(<code>crypto_data.jpg</code>)と鍵データ(<code>data.txt</code>)を受け手側に送信します。
+<br /><br /></p>
+<div class="gblog-post__anchorwrap">
+    <h2 id="受け手側でのデータ復号の実装">
+        受け手側でのデータ復号の実装
+        <a data-clipboard-text="http://www.techaas.net/post/secure-communication/#受け手側でのデータ復号の実装" class="gblog-post__anchor gblog-post__anchor--right clip" aria-label="Anchor 受け手側でのデータ復号の実装" href="#%e5%8f%97%e3%81%91%e6%89%8b%e5%81%b4%e3%81%a7%e3%81%ae%e3%83%87%e3%83%bc%e3%82%bf%e5%be%a9%e5%8f%b7%e3%81%ae%e5%ae%9f%e8%a3%85">
+            <svg class="icon gblog_link"><use xlink:href="#gblog_link"></use></svg>
+        </a>
+    </h2>
+</div><p>受け側は、 <code>receiver_decrypt.py</code> になります。</p>
+<div class="gblog-post__anchorwrap">
+    <h3 id="鍵データの復号">
+        鍵データの復号
+        <a data-clipboard-text="http://www.techaas.net/post/secure-communication/#鍵データの復号" class="gblog-post__anchor gblog-post__anchor--right clip" aria-label="Anchor 鍵データの復号" href="#%e9%8d%b5%e3%83%87%e3%83%bc%e3%82%bf%e3%81%ae%e5%be%a9%e5%8f%b7">
+            <svg class="icon gblog_link"><use xlink:href="#gblog_link"></use></svg>
+        </a>
+    </h3>
+</div><p>最初に、鍵データを復号します。</p>
+<p><code>private.pem</code> に、秘密鍵が保存されている前提になります。</p>
+<pre><code>with open('private.pem', 'rb') as f:
+    private_pem = f.read()
+    private_key = RSA.import_key(private_pem)
+</code></pre><p>送り手からもらった暗号化された鍵データ (<code>data.txt</code>) を、秘密鍵で復号します。
+暗号側と逆の手順です。</p>
+<pre><code>with open ('data.txt', 'rt') as f:
+    data = urlsafe_b64decode(f.read())
+
+private_cipher = PKCS1_OAEP.new(private_key)
+message = private_cipher.decrypt(data).decode(&quot;utf-8&quot;)
+print(message)
+</code></pre><div class="gblog-post__anchorwrap">
+    <h3 id="aes復号の準備">
+        AES復号の準備
+        <a data-clipboard-text="http://www.techaas.net/post/secure-communication/#aes復号の準備" class="gblog-post__anchor gblog-post__anchor--right clip" aria-label="Anchor AES復号の準備" href="#aes%e5%be%a9%e5%8f%b7%e3%81%ae%e6%ba%96%e5%82%99">
+            <svg class="icon gblog_link"><use xlink:href="#gblog_link"></use></svg>
+        </a>
+    </h3>
+</div><p>複合されたデータの中身から、AES の鍵 と IV (Initial Vector) を取り出します。
+送り側で、base64encode しているので、decode してから使います。</p>
+<pre><code>config = json.loads(message)
+
+key = urlsafe_b64decode(config['k'])
+iv = urlsafe_b64decode(config['v'])
+cipher = AES.new(key, AES.MODE_CBC, iv)
+</code></pre><p>復号側の実装は、暗号側の逆手順です。</p>
+<div class="gblog-post__anchorwrap">
+    <h3 id="aesの復号実行">
+        AESの復号実行
+        <a data-clipboard-text="http://www.techaas.net/post/secure-communication/#aesの復号実行" class="gblog-post__anchor gblog-post__anchor--right clip" aria-label="Anchor AESの復号実行" href="#aes%e3%81%ae%e5%be%a9%e5%8f%b7%e5%ae%9f%e8%a1%8c">
+            <svg class="icon gblog_link"><use xlink:href="#gblog_link"></use></svg>
+        </a>
+    </h3>
+</div><p>準備ができたので、暗号化された実データを復号してあげます。</p>
+<pre><code>with open ('crypto_data.jpg', 'rb') as f:
+    data = f.read()
+</code></pre><p>暗号化する際に、固定長にするために、 pad してますので、 <code>unpad</code> で余分なデータを取り除きます。</p>
+<pre><code>try:
+    pt = unpad(cipher.decrypt(data), AES.block_size)
+
+</code></pre><p>データには、暗号化する時に、実行時間を付加していますので、それを取り除いてから、 <code>output.jpg</code> として保存します。</p>
+<pre><code>    ver = pt[:1]
+    print('ver: {}'.format(ver[0]))
+
+    dt = pt[1:9]
+    dti = int.from_bytes(dt, byteorder='big')
+    dtn = datetime.datetime.fromtimestamp(dti / (1000 * 1000))
+    print(dtn)
+
+    with open ('output.jpg', 'wb') as f:
+        f.write(pt[9:])
+</code></pre><p>最後の部分は確認用です。保存したデータの SHA256 を求めています。
+暗号前のハッシュ値と比較して同じ値になっていれば、正しく復号できています。</p>
+<pre><code>    m = hashlib.sha256()
+    m.update(pt[9:])
+    print(m.hexdigest())
+</code></pre><p>最後にソースコード <a class="gblog-markdown__link" href="https://github.com/techaas/secure_data">github - secure_data</a> の方、実際に実行するとどうなるかだけ、載せておきます。</p>
+<pre><code>$ python sender_encrypt.py
+b6ee0d4f499cd26f44fcc916d91e4ca2ff78c5d17d93b46d2ff6f94aae4b0b1e
+2021-07-27 14:11:35.743782
+1627362695743782
+{&quot;k&quot;: &quot;nQNbd-UdupgniPRHyQgTi7bGSfwrro8iCyPPEZXnCpo=&quot;, &quot;v&quot;: &quot;j9K7-oZ8vFaGYZEicV-MoQ==&quot;}
+$ python receiver_decrypt.py
+{&quot;k&quot;: &quot;nQNbd-UdupgniPRHyQgTi7bGSfwrro8iCyPPEZXnCpo=&quot;, &quot;v&quot;: &quot;j9K7-oZ8vFaGYZEicV-MoQ==&quot;}
+ver: 1
+2021-07-27 14:11:35.743782
+b6ee0d4f499cd26f44fcc916d91e4ca2ff78c5d17d93b46d2ff6f94aae4b0b1e
+</code></pre><p><code>encrypt</code> の逆が <code>decrypt</code> 側に出力されるはずです。
+<br /><br /></p>
+<div class="gblog-post__anchorwrap">
+    <h2 id="まとめ">
+        まとめ
+        <a data-clipboard-text="http://www.techaas.net/post/secure-communication/#まとめ" class="gblog-post__anchor gblog-post__anchor--right clip" aria-label="Anchor まとめ" href="#%e3%81%be%e3%81%a8%e3%82%81">
+            <svg class="icon gblog_link"><use xlink:href="#gblog_link"></use></svg>
+        </a>
+    </h2>
+</div><p>セキュアなデータ交換の方法として、公開鍵暗号と共通鍵暗号を組み合わせてみました。</p>
+<p>暗号化が絡む実装する際にハマりやすいのが、それぞれの手順のパラメータを合わせることです。
+ネットワーク経由でデータ交換などを考えると、それに文字コード変換や base64 などが絡んできます。
+暗号と復号は、基本的に逆手順で行うことになりますが、それぞれの段階で正しくリバースできているか確認しながら進めることが大事でしょう。</p>
+<p>また、今回は両方とも python で同じ OS 上でやっていますが、クライアントがスマホでネイティブコード (kotlin や swift) の場合、
+実装の差異やパラメータの違いがあったして、その辺もハマりどころになるので注意してください。</p>
 
         </section>
     </article>
