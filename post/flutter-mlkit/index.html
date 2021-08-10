@@ -10,8 +10,8 @@
 
 
 
-    <meta name="description" content="Flutterでカメラにアクセスして、AI (Machine Learning) で画像認識などしてみようと思います.　の続きです
-MLKitを使って、カメラで撮った画像のテキストの解析をしてみます.">
+    <meta name="description" content="「Flutterでカメラにアクセスして、AI (Machine Learning) で画像認識などしてみようと思います」の続きです.
+モバイルデバイス用の MLKit を使って、カメラで撮った画像のテキストの解析をしてみます.">
 
 
 
@@ -32,8 +32,8 @@ MLKitを使って、カメラで撮った画像のテキストの解析をして
     
 
     <meta property="og:title" content="Flutter で画像認識 - その2" />
-<meta property="og:description" content="Flutterでカメラにアクセスして、AI (Machine Learning) で画像認識などしてみようと思います.　の続きです
-MLKitを使って、カメラで撮った画像のテキストの解析をしてみます." />
+<meta property="og:description" content="「Flutterでカメラにアクセスして、AI (Machine Learning) で画像認識などしてみようと思います」の続きです.
+モバイルデバイス用の MLKit を使って、カメラで撮った画像のテキストの解析をしてみます." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://www.techaas.net/post/flutter-mlkit/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2021-08-04T00:00:01+09:00" />
@@ -42,8 +42,8 @@ MLKitを使って、カメラで撮った画像のテキストの解析をして
 
 <meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Flutter で画像認識 - その2"/>
-<meta name="twitter:description" content="Flutterでカメラにアクセスして、AI (Machine Learning) で画像認識などしてみようと思います.　の続きです
-MLKitを使って、カメラで撮った画像のテキストの解析をしてみます."/>
+<meta name="twitter:description" content="「Flutterでカメラにアクセスして、AI (Machine Learning) で画像認識などしてみようと思います」の続きです.
+モバイルデバイス用の MLKit を使って、カメラで撮った画像のテキストの解析をしてみます."/>
 
 
     <link rel="preload" as="font" href="/fonts/Metropolis.woff2" type="font/woff2" crossorigin="anonymous">
@@ -80,7 +80,7 @@ MLKitを使って、カメラで撮った画像のテキストの解析をして
     "name": "Flutter で画像認識 - その2",
     "headline": "Flutter で画像認識 - その2",
     "alternativeHeadline": "",
-    "description": "\u003cp\u003eFlutterでカメラにアクセスして、AI (Machine Learning) で画像認識などしてみようと思います.　の続きです\u003cbr\u003e\nMLKitを使って、カメラで撮った画像のテキストの解析をしてみます.\u003c\/p\u003e",
+    "description": "\u003cp\u003e「Flutterでカメラにアクセスして、AI (Machine Learning) で画像認識などしてみようと思います」の続きです.\u003cbr\u003e\nモバイルデバイス用の MLKit を使って、カメラで撮った画像のテキストの解析をしてみます.\u003c\/p\u003e",
     "inLanguage": "en",
     "isFamilyFriendly": "true",
     "mainEntityOfPage": {
@@ -106,7 +106,7 @@ MLKitを使って、カメラで撮った画像のテキストの解析をして
         }
     },
     "url" : "http:\/\/www.techaas.net\/post\/flutter-mlkit\/",
-    "wordCount" : "309",
+    "wordCount" : "313",
     "genre" : [ "Mobile" , "Flutter" ]
 }
 </script>
@@ -256,8 +256,8 @@ if (!doNotTrack) {
         </header>
 
         <section class="gblog-markdown">
-            <p>Flutterでカメラにアクセスして、AI (Machine Learning) で画像認識などしてみようと思います.　の続きです<br>
-MLKitを使って、カメラで撮った画像のテキストの解析をしてみます.</p>
+            <p>「Flutterでカメラにアクセスして、AI (Machine Learning) で画像認識などしてみようと思います」の続きです.<br>
+モバイルデバイス用の MLKit を使って、カメラで撮った画像のテキストの解析をしてみます.</p>
   <div class="gblog-toc gblog-toc__level--6"><nav id="TableOfContents"><ul>
         <li><a href="#mlkitの準備">MLKitの準備</a></li>
         <li><a href="#pubdev---mlkit">pub.dev - MLKit</a></li>
@@ -466,11 +466,15 @@ MLKit では、学習済みの推論モデルが提供されていて、それ�
         </a>
     </h2>
 </div><p>簡単ですが、デバイスで写真を撮って、その中のテキストを認識させてみるとこんな感じになるでした。
-実際に実行してみた結果をみると、ソースコードの様にきちんとしたキャラクタの認識はかなり高精度かなという感じです。</p>
+実際に実行してみた結果をみると、ソースコードの様にきちんとしたキャラクタの認識はかなり高精度かなという感じです。
+(画面をカメラで撮っています)</p>
 <img src="/img/Screenshot_20210805-142731.jpg" style="border:1px solid black;"/>
+<p>また、電卓を撮ってみたときはこんな感じです。一部認識していないところがありますね。また、認識する時の範囲も違います。</p>
+<img src="/img/SS_2021-08-06_9.47.03.jpg" style="border:1px solid black;"/>
 <p>このあと、どうやったら認識精度を上げられるか等を試す予定です。
-あと、やってみたらわかりますが、画像が傾いたりしていると途端に精度が下がります。
-その辺、精度を上げるための前処理などを噛ませてあげたほうが良さそうです。</p>
+やってみるとわかるのですが、画像が傾いたりしていると途端に精度が下がります。
+その辺、精度を上げるための前処理などを噛ませてあげたほうが良いかと思います。
+(手を動かすことの大切さっていうのは、こういうところです。ITでも肌感覚っていうのは大事で、その積み重ねがプロジェクトのリスク管理となります)</p>
 <p>また、MLKitでは、Tensorflow Lite 用に学習されたモデルを読み込んだりできます。
 TF使えば、特定用途に向けた強化学習とかも可能だと思いますので、そちらを試していきます。
 目処が立ったら、また続きを書こうと思います。</p>
