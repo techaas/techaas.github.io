@@ -35,7 +35,7 @@
 <meta property="og:description" content="「Flutterでカメラにアクセスして、AI (Machine Learning) で画像認識などしてみようと思います」の続きです.
 モバイルデバイス用の MLKit を使って、カメラで撮った画像のテキストの解析をしてみます." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://www.techaas.net/post/flutter-mlkit/" /><meta property="article:section" content="post" />
+<meta property="og:url" content="https://www.techaas.net/post/flutter-mlkit/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2021-08-04T00:00:01+09:00" />
 <meta property="article:modified_time" content="2021-08-04T00:00:01+09:00" />
 
@@ -85,7 +85,7 @@
     "isFamilyFriendly": "true",
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "http:\/\/www.techaas.net\/post\/flutter-mlkit\/"
+        "@id": "https:\/\/www.techaas.net\/post\/flutter-mlkit\/"
     },
     "author" : [
     ],
@@ -97,15 +97,15 @@
     "publisher":{
         "@type":"Organization",
         "name": "TECHaas",
-        "url": "http://www.techaas.net/",
+        "url": "https://www.techaas.net/",
         "logo": {
             "@type": "ImageObject",
-            "url": "http:\/\/www.techaas.net\/brand.svg",
+            "url": "https:\/\/www.techaas.net\/brand.svg",
             "width":"32",
             "height":"32"
         }
     },
-    "url" : "http:\/\/www.techaas.net\/post\/flutter-mlkit\/",
+    "url" : "https:\/\/www.techaas.net\/post\/flutter-mlkit\/",
     "wordCount" : "313",
     "genre" : [ "Mobile" , "Flutter" ]
 }
@@ -125,7 +125,7 @@ if (!doNotTrack) {
 }
 </script>
 
- <link href="http://www.techaas.net/css/syntax.css" rel="stylesheet">
+ <link href="https://www.techaas.net/css/syntax.css" rel="stylesheet">
 </head>
 
 <body>
@@ -138,7 +138,7 @@ if (!doNotTrack) {
     <div class="wrapper">
         <header class="gblog-header">
     <div class="container flex align-center justify-center">
-        <a class="gblog-header__link" rel="me" href="http://www.techaas.net/">
+        <a class="gblog-header__link" rel="me" href="https://www.techaas.net/">
             <span class="gblog-brand flex align-center justify-center">
                 <img class="gblog-brand__img" src="/brand.svg" alt="">
                 TECHaas
@@ -275,7 +275,7 @@ if (!doNotTrack) {
 <div class="gblog-post__anchorwrap">
     <h2 id="mlkitの準備">
         MLKitの準備
-        <a data-clipboard-text="http://www.techaas.net/post/flutter-mlkit/#mlkitの準備" class="gblog-post__anchor gblog-post__anchor--right clip" aria-label="Anchor MLKitの準備" href="#mlkit%e3%81%ae%e6%ba%96%e5%82%99">
+        <a data-clipboard-text="https://www.techaas.net/post/flutter-mlkit/#mlkitの準備" class="gblog-post__anchor gblog-post__anchor--right clip" aria-label="Anchor MLKitの準備" href="#mlkit%e3%81%ae%e6%ba%96%e5%82%99">
             <svg class="icon gblog_link"><use xlink:href="#gblog_link"></use></svg>
         </a>
     </h2>
@@ -296,7 +296,7 @@ MLKit では、学習済みの推論モデルが提供されていて、それ�
 <div class="gblog-post__anchorwrap">
     <h2 id="pubdev---mlkit">
         pub.dev - MLKit
-        <a data-clipboard-text="http://www.techaas.net/post/flutter-mlkit/#pubdev---mlkit" class="gblog-post__anchor gblog-post__anchor--right clip" aria-label="Anchor pub.dev - MLKit" href="#pubdev---mlkit">
+        <a data-clipboard-text="https://www.techaas.net/post/flutter-mlkit/#pubdev---mlkit" class="gblog-post__anchor gblog-post__anchor--right clip" aria-label="Anchor pub.dev - MLKit" href="#pubdev---mlkit">
             <svg class="icon gblog_link"><use xlink:href="#gblog_link"></use></svg>
         </a>
     </h2>
@@ -319,7 +319,7 @@ MLKit では、学習済みの推論モデルが提供されていて、それ�
 <div class="gblog-post__anchorwrap">
     <h2 id="機械学習による文字検出">
         機械学習による文字検出
-        <a data-clipboard-text="http://www.techaas.net/post/flutter-mlkit/#機械学習による文字検出" class="gblog-post__anchor gblog-post__anchor--right clip" aria-label="Anchor 機械学習による文字検出" href="#%e6%a9%9f%e6%a2%b0%e5%ad%a6%e7%bf%92%e3%81%ab%e3%82%88%e3%82%8b%e6%96%87%e5%ad%97%e6%a4%9c%e5%87%ba">
+        <a data-clipboard-text="https://www.techaas.net/post/flutter-mlkit/#機械学習による文字検出" class="gblog-post__anchor gblog-post__anchor--right clip" aria-label="Anchor 機械学習による文字検出" href="#%e6%a9%9f%e6%a2%b0%e5%ad%a6%e7%bf%92%e3%81%ab%e3%82%88%e3%82%8b%e6%96%87%e5%ad%97%e6%a4%9c%e5%87%ba">
             <svg class="icon gblog_link"><use xlink:href="#gblog_link"></use></svg>
         </a>
     </h2>
@@ -340,7 +340,7 @@ MLKit では、学習済みの推論モデルが提供されていて、それ�
 <div class="gblog-post__anchorwrap">
     <h3 id="画像の大きさ">
         画像の大きさ
-        <a data-clipboard-text="http://www.techaas.net/post/flutter-mlkit/#画像の大きさ" class="gblog-post__anchor gblog-post__anchor--right clip" aria-label="Anchor 画像の大きさ" href="#%e7%94%bb%e5%83%8f%e3%81%ae%e5%a4%a7%e3%81%8d%e3%81%95">
+        <a data-clipboard-text="https://www.techaas.net/post/flutter-mlkit/#画像の大きさ" class="gblog-post__anchor gblog-post__anchor--right clip" aria-label="Anchor 画像の大きさ" href="#%e7%94%bb%e5%83%8f%e3%81%ae%e5%a4%a7%e3%81%8d%e3%81%95">
             <svg class="icon gblog_link"><use xlink:href="#gblog_link"></use></svg>
         </a>
     </h3>
@@ -396,7 +396,7 @@ MLKit では、学習済みの推論モデルが提供されていて、それ�
 <div class="gblog-post__anchorwrap">
     <h3 id="initdispose">
         init/dispose
-        <a data-clipboard-text="http://www.techaas.net/post/flutter-mlkit/#initdispose" class="gblog-post__anchor gblog-post__anchor--right clip" aria-label="Anchor init/dispose" href="#initdispose">
+        <a data-clipboard-text="https://www.techaas.net/post/flutter-mlkit/#initdispose" class="gblog-post__anchor gblog-post__anchor--right clip" aria-label="Anchor init/dispose" href="#initdispose">
             <svg class="icon gblog_link"><use xlink:href="#gblog_link"></use></svg>
         </a>
     </h3>
@@ -417,7 +417,7 @@ MLKit では、学習済みの推論モデルが提供されていて、それ�
 </code></pre></div><div class="gblog-post__anchorwrap">
     <h3 id="ui描画">
         UI描画
-        <a data-clipboard-text="http://www.techaas.net/post/flutter-mlkit/#ui描画" class="gblog-post__anchor gblog-post__anchor--right clip" aria-label="Anchor UI描画" href="#ui%e6%8f%8f%e7%94%bb">
+        <a data-clipboard-text="https://www.techaas.net/post/flutter-mlkit/#ui描画" class="gblog-post__anchor gblog-post__anchor--right clip" aria-label="Anchor UI描画" href="#ui%e6%8f%8f%e7%94%bb">
             <svg class="icon gblog_link"><use xlink:href="#gblog_link"></use></svg>
         </a>
     </h3>
@@ -461,7 +461,7 @@ MLKit では、学習済みの推論モデルが提供されていて、それ�
 <div class="gblog-post__anchorwrap">
     <h2 id="まとめ">
         まとめ
-        <a data-clipboard-text="http://www.techaas.net/post/flutter-mlkit/#まとめ" class="gblog-post__anchor gblog-post__anchor--right clip" aria-label="Anchor まとめ" href="#%e3%81%be%e3%81%a8%e3%82%81">
+        <a data-clipboard-text="https://www.techaas.net/post/flutter-mlkit/#まとめ" class="gblog-post__anchor gblog-post__anchor--right clip" aria-label="Anchor まとめ" href="#%e3%81%be%e3%81%a8%e3%82%81">
             <svg class="icon gblog_link"><use xlink:href="#gblog_link"></use></svg>
         </a>
     </h2>

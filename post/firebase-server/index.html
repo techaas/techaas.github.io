@@ -35,7 +35,7 @@
 <meta property="og:description" content="「Firebase のユーザー認証システムで、Web クライアント認証を実装してみます」 の続きです.
 今回は、サーバ側で認証済のクライアントかどうかを確かめるために JWT の検証をしてみるです." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="http://www.techaas.net/post/firebase-server/" /><meta property="article:section" content="post" />
+<meta property="og:url" content="https://www.techaas.net/post/firebase-server/" /><meta property="article:section" content="post" />
 <meta property="article:published_time" content="2021-07-16T00:00:01+09:00" />
 <meta property="article:modified_time" content="2021-07-16T00:00:01+09:00" />
 
@@ -85,7 +85,7 @@
     "isFamilyFriendly": "true",
     "mainEntityOfPage": {
         "@type": "WebPage",
-        "@id": "http:\/\/www.techaas.net\/post\/firebase-server\/"
+        "@id": "https:\/\/www.techaas.net\/post\/firebase-server\/"
     },
     "author" : [
     ],
@@ -97,15 +97,15 @@
     "publisher":{
         "@type":"Organization",
         "name": "TECHaas",
-        "url": "http://www.techaas.net/",
+        "url": "https://www.techaas.net/",
         "logo": {
             "@type": "ImageObject",
-            "url": "http:\/\/www.techaas.net\/brand.svg",
+            "url": "https:\/\/www.techaas.net\/brand.svg",
             "width":"32",
             "height":"32"
         }
     },
-    "url" : "http:\/\/www.techaas.net\/post\/firebase-server\/",
+    "url" : "https:\/\/www.techaas.net\/post\/firebase-server\/",
     "wordCount" : "361",
     "genre" : [ "Web" , "Cloud" ]
 }
@@ -125,7 +125,7 @@ if (!doNotTrack) {
 }
 </script>
 
- <link href="http://www.techaas.net/css/syntax.css" rel="stylesheet">
+ <link href="https://www.techaas.net/css/syntax.css" rel="stylesheet">
 </head>
 
 <body>
@@ -138,7 +138,7 @@ if (!doNotTrack) {
     <div class="wrapper">
         <header class="gblog-header">
     <div class="container flex align-center justify-center">
-        <a class="gblog-header__link" rel="me" href="http://www.techaas.net/">
+        <a class="gblog-header__link" rel="me" href="https://www.techaas.net/">
             <span class="gblog-brand flex align-center justify-center">
                 <img class="gblog-brand__img" src="/brand.svg" alt="">
                 TECHaas
@@ -273,7 +273,7 @@ if (!doNotTrack) {
 <div class="gblog-post__anchorwrap">
     <h2 id="クライアントで-jwt-を取得する">
         クライアントで JWT を取得する
-        <a data-clipboard-text="http://www.techaas.net/post/firebase-server/#クライアントで-jwt-を取得する" class="gblog-post__anchor gblog-post__anchor--right clip" aria-label="Anchor クライアントで JWT を取得する" href="#%e3%82%af%e3%83%a9%e3%82%a4%e3%82%a2%e3%83%b3%e3%83%88%e3%81%a7-jwt-%e3%82%92%e5%8f%96%e5%be%97%e3%81%99%e3%82%8b">
+        <a data-clipboard-text="https://www.techaas.net/post/firebase-server/#クライアントで-jwt-を取得する" class="gblog-post__anchor gblog-post__anchor--right clip" aria-label="Anchor クライアントで JWT を取得する" href="#%e3%82%af%e3%83%a9%e3%82%a4%e3%82%a2%e3%83%b3%e3%83%88%e3%81%a7-jwt-%e3%82%92%e5%8f%96%e5%be%97%e3%81%99%e3%82%8b">
             <svg class="icon gblog_link"><use xlink:href="#gblog_link"></use></svg>
         </a>
     </h2>
@@ -306,7 +306,7 @@ JWT は、 base64url (URL セーフな base64 エンコード) された JSON �
 <div class="gblog-post__anchorwrap">
     <h2 id="authorization-ヘッダー">
         Authorization ヘッダー
-        <a data-clipboard-text="http://www.techaas.net/post/firebase-server/#authorization-ヘッダー" class="gblog-post__anchor gblog-post__anchor--right clip" aria-label="Anchor Authorization ヘッダー" href="#authorization-%e3%83%98%e3%83%83%e3%83%80%e3%83%bc">
+        <a data-clipboard-text="https://www.techaas.net/post/firebase-server/#authorization-ヘッダー" class="gblog-post__anchor gblog-post__anchor--right clip" aria-label="Anchor Authorization ヘッダー" href="#authorization-%e3%83%98%e3%83%83%e3%83%80%e3%83%bc">
             <svg class="icon gblog_link"><use xlink:href="#gblog_link"></use></svg>
         </a>
     </h2>
@@ -341,7 +341,7 @@ JWT は、 base64url (URL セーフな base64 エンコード) された JSON �
 <div class="gblog-post__anchorwrap">
     <h2 id="テストサーバ">
         テストサーバ
-        <a data-clipboard-text="http://www.techaas.net/post/firebase-server/#テストサーバ" class="gblog-post__anchor gblog-post__anchor--right clip" aria-label="Anchor テストサーバ" href="#%e3%83%86%e3%82%b9%e3%83%88%e3%82%b5%e3%83%bc%e3%83%90">
+        <a data-clipboard-text="https://www.techaas.net/post/firebase-server/#テストサーバ" class="gblog-post__anchor gblog-post__anchor--right clip" aria-label="Anchor テストサーバ" href="#%e3%83%86%e3%82%b9%e3%83%88%e3%82%b5%e3%83%bc%e3%83%90">
             <svg class="icon gblog_link"><use xlink:href="#gblog_link"></use></svg>
         </a>
     </h2>
@@ -412,7 +412,7 @@ Google のクラウド上で実行している場合には自動的に設定さ�
 <div class="gblog-post__anchorwrap">
     <h2 id="最後に">
         最後に
-        <a data-clipboard-text="http://www.techaas.net/post/firebase-server/#最後に" class="gblog-post__anchor gblog-post__anchor--right clip" aria-label="Anchor 最後に" href="#%e6%9c%80%e5%be%8c%e3%81%ab">
+        <a data-clipboard-text="https://www.techaas.net/post/firebase-server/#最後に" class="gblog-post__anchor gblog-post__anchor--right clip" aria-label="Anchor 最後に" href="#%e6%9c%80%e5%be%8c%e3%81%ab">
             <svg class="icon gblog_link"><use xlink:href="#gblog_link"></use></svg>
         </a>
     </h2>
