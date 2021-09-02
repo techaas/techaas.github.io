@@ -1,4 +1,7 @@
 /* You can add custom styles here. */
+.gblog-brand {
+  font-family: 'Tahoma';
+}
 #back-to-top {
     position: fixed;
     right: 10px;
